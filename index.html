@@ -18,8 +18,8 @@
                         width="281" height="32">
                 </a>
                 <div class="buttons">
-                    <button class="btn-live" type="button">Live Chat</button>
-                    <button class="btn-order m-l-20 open_popup">Get A Quote</button>
+                    <button class="btn-live" type="button" onclick="openPopup()">Live Chat</button>
+                    <button class="btn-order m-l-20 open_popup" onclick="openPopup()">Get A Quote</button>
                 </div>
             </div>
         </nav>
@@ -56,8 +56,8 @@
                 <div class="col-12 col-lg-6">
                     <h1 class="h1">Welcome to KDP Amazon Book Publishing house in canada</h1>
                     <p>Become a best-seller in Canada by Publishing your book on Amazon and making it reach millions of readers online.</p>
-                    <button class="btn-order open_popup">Start Kindle Direct Publishing</button>
-                    <button class="btn-live m-l-20" type="button">Discuss with Expert</button>
+                    <button class="btn-order open_popup" onclick="openPopup()">Start Kindle Direct Publishing</button>
+                    <button class="btn-live m-l-20" type="button" onclick="openPopup()">Discuss with Expert</button>
                     <div class="m-t-20 row gy-4 gx-3 align-items-center">
                         <div class="col-6 col-sm-4 col-md-2">
                             <img src="images/amazon-service-provider.webp" class="img-fluid d-block mx-auto"
@@ -205,8 +205,8 @@
                     <span class="h5">Royalties</span>
                     <p>Self-publish your book with an expert’s assistance and retain 100% ownership and royalties.</p>
                     <div class="m-t-30 d-flex">
-                        <button class="btn-order open_popup">Self-Publish Today</button>
-                        <button class="btn-live m-l-20">Talk To Experts</button>
+                        <button class="btn-order open_popup" onclick="openPopup()">Self-Publish Today</button>
+                        <button class="btn-live m-l-20" onclick="openPopup()">Talk To Experts</button>
                     </div>
                 </div>
             </div>
@@ -330,7 +330,7 @@
                 </div>
             </div>
             <div class="m-t-40 text-center">
-                <button class="btn-order open_popup">Publish Today</button>
+                <button class="btn-order open_popup" onclick="openPopup()">Publish Today</button>
             </div>
         </div>
     </section>
@@ -351,8 +351,8 @@
                     <p>We have been in this field for more than a decade now – hence, our experience makes us the
                         top-recommended choice among all.</p>
                     <div class="m-t-30 d-flex">
-                        <button class="btn-order open_popup">Join Amazon Community</button>
-                        <button class="btn-live m-l-20">Book a Free Consultation</button>
+                        <button class="btn-order open_popup" onclick="openPopup()">Join Amazon Community</button>
+                        <button class="btn-live m-l-20" onclick="openPopup()">Book a Free Consultation</button>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 my-auto">
@@ -375,7 +375,7 @@
                     <img src="images/book-covers.webp" class="img-fluid m-t-30 mx-auto" alt="Book Covers"
                         title="Book Covers" loading="lazy" width="540" height="396">
                     <div class="m-t-40 text-center">
-                        <button class="btn-order open_popup">Publish My Book</button>
+                        <button class="btn-order open_popup" onclick="openPopup()">Publish My Book</button>
                     </div>
                 </div>
             </div>
@@ -478,6 +478,52 @@
         </div>
     </footer>
 
+
+
+
+    
+<script>
+function openPopup() {
+    if (document.getElementById("popupOverlay")) return;
+
+    document.body.insertAdjacentHTML("beforeend", `
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-container">
+
+            <button class="popup-close" onclick="closePopup()">×</button>
+
+            <div class="popup-left">
+                <img class="popup-logo" src="https://cdn.bookpublishingcanada.ca/assets/frontend/images/logo/book-publishing-canada.webp" alt="Logo">
+                </div>
+
+            <div class="popup-right">
+
+                <h2 class="popup-heading">
+                    #1 Self-Publishing Company in Canada Reach Millions of Readers
+                </h2>
+
+                <p class="popup-text">
+                    Self-publish print and digital books, and reach millions of readers around the world on Amazon.
+                </p>
+
+                <form class="popup-form">
+                    <input type="text" class="popup-input" placeholder="Full Name" required>
+                    <input type="email" class="popup-input" placeholder="Email Address" required>
+                    <input type="tel" class="popup-input" placeholder="Phone Number">
+                    <textarea class="popup-textarea" placeholder="Tell us about your Project"></textarea>
+                    <button type="submit" class="popup-btn">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    `);
+}
+
+function closePopup() {
+    document.getElementById("popupOverlay")?.remove();
+}
+</script>
 
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
