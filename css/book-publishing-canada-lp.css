@@ -1448,14 +1448,19 @@ section.why-choose .box {
 }
 section.why-choose .box img {
   display: block;
-  margin: auto;
+  margin: 10px;
 
 }
 section.why-choose .box .h3 {
   /* margin-bottom: 16px;
   margin-top: 16px; */
   margin: 0;
-  color: white !important;
+  color: black !important;
+  font-size: 20px;
+  height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 section.about-reviews {
   background-image: url(../images/bg.webp);
@@ -1655,7 +1660,8 @@ footer.footer .payment-icon p {
   }
   section.why-choose .box p {
     margin: auto;
-    width: 85%;
+    width: 100%;
+    margin: 10px;
   }
 }
 @media (min-width: 1220px) and (max-width: 1399px) {
