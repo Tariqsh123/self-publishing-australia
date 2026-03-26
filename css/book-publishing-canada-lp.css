@@ -1511,7 +1511,7 @@ section.how-its-work .how-box {
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 200px;
-  background: linear-gradient(white,#fa9a0a42);
+  background: linear-gradient(white,white,#fa9a0a42);
   padding: 10px;
   display: flex;
   flex-direction: column;
