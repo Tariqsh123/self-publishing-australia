@@ -2109,7 +2109,8 @@ section.why-choose .box p {
     font-size: medium;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom:10px ;
+    margin-top:20px ;
+    margin-bottom:20px ;
     border-radius: 10px;
 }
 
