@@ -2608,8 +2608,8 @@ section.about-reviews{
 .the-rescue-package-link {
   display: block;
   margin-bottom: 15px;
-  text-decoration: none;
-  color: #023047;
+  color: blue !important;
+  text-decoration: underline !important;
   font-weight: 600;
   transition: 0.3s;
 }
