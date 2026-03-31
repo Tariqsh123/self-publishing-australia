@@ -3812,3 +3812,60 @@ section.about-reviews{
   font-size: 13px;
   color: #666;
 }
+
+
+#spa-terms-main {
+  /* padding: 60px 20px;
+  background: #ffffff; */
+  padding: 0;
+}
+
+/* WRAPPER */
+.spa-terms-wrapper {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* HEADING */
+.spa-terms-heading {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* INTRO */
+.spa-terms-intro {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* BLOCK */
+.spa-terms-block {
+  margin-bottom: 30px;
+}
+
+/* SUB HEADINGS */
+.spa-terms-block h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* TEXT */
+.spa-terms-block p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .spa-terms-heading {
+    font-size: 28px;
+  }
+
+  .spa-terms-block h2 {
+    font-size: 18px;
+  }
+}
