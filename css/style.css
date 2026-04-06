@@ -2886,7 +2886,7 @@ section.about-reviews{
   /* ---------------- Nav Menu ---------------- */
   #new-nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     list-style: none;
     flex: 1;
     justify-content: center;
@@ -3017,7 +3017,7 @@ section.about-reviews{
 }
 
 .about-main-hero-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
