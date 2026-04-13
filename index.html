@@ -97,13 +97,32 @@
 
   <!-- Nav Menu -->
   <ul id="new-nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about-us.html">About</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="free-qoute.html">Free Quote</a></li>
-  </ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about-us.html">About</a></li>
+
+  <li><a href="portfolio.html">Portfolio</a></li>
+
+  <!-- SERVICES DROPDOWN -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle">Services ▾</a>
+
+    <ul class="dropdown-menu">
+      <li><a href="book-editing.html">Book Editing</a></li>
+      <li><a href="proofreading.html">Proofreading</a></li>
+      <li><a href="book-formatting.html">Book Formatting</a></li>
+      <li><a href="book-cover-design.html">Book Cover Design</a></li>
+      <li><a href="childrens-book-publishing.html">Childrens Book Publishing</a></li>
+      <li><a href="book-illustration.html">Book Illustration</a></li>
+      <li><a href="book-marketing.html">Book Marketing</a></li>
+      <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
+      <li><a href="author-website.html">Author Website</a></li>
+    </ul>
+  </li>
+
+  <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="free-qoute.html">Free Quote</a></li>
+</ul>
 
   <!-- Button -->
   <button id="new-nav-button" class="btn-live" type="button" onclick="openPopup()">BOOK A 30-MINUTE DISCOVERY CALL</button>
@@ -116,33 +135,7 @@
   </div>
 </nav>
 
-<script>
-  const hamburger = document.getElementById('new-nav-hamburger');
-  const navMenu = document.getElementById('new-nav-menu');
-  const navbar = document.getElementById('new-nav-container');
 
-  // Hamburger toggle
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.children[0].classList.toggle('rotate1');
-    hamburger.children[1].classList.toggle('fade');
-    hamburger.children[2].classList.toggle('rotate2');
-  });
-
-  // Scroll shadow
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // Dummy popup function
-  function openPopup() {
-    alert('Popup triggered!');
-  }
-</script>
         <div class="top-bar">
             <div class="container">
                 <div class="row align-items-center">
@@ -169,6 +162,83 @@
             </div>
         </div>
     </header>
+
+    <script>
+  const hamburger = document.getElementById('new-nav-hamburger');
+const navMenu = document.getElementById('new-nav-menu');
+const navbar = document.getElementById('new-nav-container');
+const dropdown = document.querySelector(".dropdown");
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+// ✅ Hamburger toggle
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  navMenu.classList.toggle('active');
+
+  hamburger.children[0].classList.toggle('rotate1');
+  hamburger.children[1].classList.toggle('fade');
+  hamburger.children[2].classList.toggle('rotate2');
+
+  // menu close ho to dropdown bhi close
+  if (!navMenu.classList.contains("active")) {
+    dropdown.classList.remove("open");
+  }
+});
+
+// ✅ Services dropdown (FIXED toggle)
+dropdownToggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  if (dropdown.classList.contains("open")) {
+    dropdown.classList.remove("open");
+  } else {
+    dropdown.classList.add("open");
+  }
+});
+
+// ✅ Outside click → close everything
+document.addEventListener("click", (e) => {
+  const isInsideMenu = navMenu.contains(e.target);
+  const isHamburger = hamburger.contains(e.target);
+
+  if (!isInsideMenu && !isHamburger) {
+    navMenu.classList.remove("active");
+
+    hamburger.children[0].classList.remove('rotate1');
+    hamburger.children[1].classList.remove('fade');
+    hamburger.children[2].classList.remove('rotate2');
+
+    dropdown.classList.remove("open");
+  }
+});
+
+// ✅ Close menu ONLY when real links clicked (NOT Services toggle)
+document.querySelectorAll("#new-nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+
+    if (link.classList.contains("dropdown-toggle")) return;
+
+    navMenu.classList.remove("active");
+
+    hamburger.children[0].classList.remove('rotate1');
+    hamburger.children[1].classList.remove('fade');
+    hamburger.children[2].classList.remove('rotate2');
+
+    dropdown.classList.remove("open");
+  });
+});
+
+// ✅ Scroll shadow
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
 
     <section class="main-banner">
         <div class="container">
@@ -326,34 +396,58 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <p>What services are you looking for?</p>
-                                    <div class="checklist-box">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="self-publishing">
-                                            <label class="form-check-label" for="self-publishing">Self Publishing</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="formating">
-                                            <label class="form-check-label" for="formating">Formating</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="editing">
-                                            <label class="form-check-label" for="editing">Editing</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="illustration" >
-                                            <label class="form-check-label" for="illustration">Illustration</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="cover-design">
-                                            <label class="form-check-label" for="cover-design">Cover Design</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="book-marketing">
-                                            <label class="form-check-label" for="book-marketing">Book Marketing</label>
-                                        </div>
-                                    </div>
-                                </div>
+    <p>What services are you looking for?</p>
+
+    <div class="checklist-box">
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="book-editing">
+            <label class="form-check-label" for="book-editing">Book Editing</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="proofreading">
+            <label class="form-check-label" for="proofreading">Proofreading</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="book-formatting">
+            <label class="form-check-label" for="book-formatting">Book Formatting</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="cover-design">
+            <label class="form-check-label" for="cover-design">Book Cover Design</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="illustration">
+            <label class="form-check-label" for="illustration">Book Illustration</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="children-book-publishing">
+            <label class="form-check-label" for="children-book-publishing">Children's Book Publishing</label>
+        </div>
+
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="book-marketing">
+            <label class="form-check-label" for="book-marketing">Book Marketing</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="audiobook">
+            <label class="form-check-label" for="audiobook">Audiobook Publishing</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="author-website">
+            <label class="form-check-label" for="author-website">Author Website</label>
+        </div>
+
+    </div>
+</div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="submit">
                                         <button type="submit"  class="btn-order">Submit</button>
@@ -416,40 +510,62 @@
                 <div class="col-12 col-lg-4 box">
                     <img src="https://img.icons8.com/?size=100&id=bbKHo0d_8kar&format=png&color=1A1A1A" class="img-fluid" alt="Professional Book Formatting" title="Professional Book Formatting"
                         loading="lazy" width="80" height="80">
-                    <span class="h3" style="color: #fa9a0a;">Professional Book Formatting </span>
+                    <span class="h3" style="color: #fa9a0a;">Book Editing </span>
                     <p>Clean interiors, spacing, and chapter styling make your manuscript easier to read. Being your professional book publisher, we prepare print and digital files that look professional, load correctly, and protect your book’s visual consistency everywhere. </p>
+                    <a href="book-editing.html" class="home-service-btn">Read More →</a>
                 </div>
                 <div class="col-12 col-lg-4 box">
                     <img src="https://img.icons8.com/?size=100&id=nt7jrhMPqVjW&format=png&color=1A1A1A" class="img-fluid" alt="Book Cover Design"
                         title="Book Cover Design" loading="lazy" width="70" height="70">
                     <span class="h3" style="color: #fa9a0a;">Book Cover Design </span>
                     <p>Strong covers help buyers stop scrolling. We create market-aware book cover design on Amazon that matches genre expectations, strengthens first impressions, and supports better conversion on search results, category pages, and author listings online.</p>
+                    <a href="book-cover-design.html" class="home-service-btn">Read More →</a>
                 </div>
                 <div class="col-12 col-lg-4 box">
-                    <img src="https://img.icons8.com/?size=100&id=31761&format=png&color=1A1A1A" class="img-fluid" alt="Amazon KDP Publishing"
+                    <img src="https://img.icons8.com/?size=100&id=KgXdyqifPFoV&format=png&color=1A1A1A" class="img-fluid" alt="Amazon KDP Publishing"
                         title="Amazon KDP Publishing" loading="lazy" width="60" height="60">
-                    <span class="h3" style="color: #fa9a0a;">Amazon KDP Publishing </span>
+                    <span class="h3" style="color: #fa9a0a;">Children's Book Publishing </span>
                     <p>We handle upload preparation, metadata checks, pricing setup, and final submission, so your title is submitted correctly to Amazon. With our Amazon marketing services, reach your audience with confidence, avoid delays and reduce major technical errors early.</p>
+                    <a href="childrens-book-publishing.html" class="home-service-btn">Read More →</a>
                 </div>
+               
+
                 <div class="col-12 col-lg-4 box">
-                    <img src="https://img.icons8.com/?size=100&id=SOSsf64BLnDT&format=png&color=1A1A1A" class="img-fluid" alt="Book Editing Services"
-                        title="Book Editing Services" loading="lazy" width="70" height="70">
-                    <span class="h3" style="color: #fa9a0a;">Book Editing Services </span>
-                    <p>We refine grammar, clarity, tone, and structure so your message reads smoothly from start to finish. Every edit improves flow, removes distractions, and helps your book feel more credible overall. </p>
-                </div>
-                <div class="col-12 col-lg-4 box">
-                    <img src="https://img.icons8.com/?size=100&id=6518&format=png&color=1A1A1A" class="img-fluid" alt="Kindle Publishing Support " title="Kindle Publishing Support "
-                        loading="lazy" width="60" height="60">
-                    <span class="h3" style="color: #fa9a0a;">Kindle Publishing Support </span>
-                    <p>Readers expect a smooth digital experience. We format Kindle files, test device display, and prepare the final upload so your eBook looks polished on phones, tablets, and e-readers properly everywhere. </p>
-                </div>
-                <div class="col-12 col-lg-4 box">
-                    <img src="https://img.icons8.com/?size=100&id=25180&format=png&color=1A1A1A" class="img-fluid" alt="Multi-Platform Distribution " title="Multi-Platform Distribution "
-                        loading="lazy" width="80" height="80">
-                    <span class="h3" style="color: #fa9a0a;">Multi-Platform Distribution </span>
-                    <p>Expand your reach beyond a single platform. We prepare your book for multiple channels so it’s easier to publish and get discovered by more readers worldwide.</p>
-                    <p>Your book will be adapted for platforms like Barnes & Noble, Apple Books, IngramSpark, Lulu, Google Books, Rakuten Kobo, and Smashwords, making a smooth distribution process and better long-term visibility of your book.</p>
-                </div>
+    <img src="https://img.icons8.com/?size=100&id=50835&format=png&color=1A1A1A" class="img-fluid" alt="Proofreading Services" title="Proofreading Services" loading="lazy" width="70" height="70">
+    <span class="h3" style="color: #fa9a0a;">Proofreading Services</span>
+    <p>Final error correction for spelling, grammar, punctuation, and formatting to ensure a clean, professional, and publication-ready manuscript with complete accuracy and consistency.</p>
+                    <a href="proofreading.html" class="home-service-btn">Read More →</a>
+</div>
+
+<div class="col-12 col-lg-4 box">
+    <img src="https://img.icons8.com/?size=100&id=V7GXxGYWF6UG&format=png&color=1A1A1A" class="img-fluid" alt="Book Illustration" title="Book Illustration" loading="lazy" width="70" height="70">
+    <span class="h3" style="color: #fa9a0a;">Book Illustration</span>
+    <p>Custom illustrations that enhance storytelling, visual appeal, and reader engagement for fiction, children’s books, and illustrated publishing projects with creative depth.</p>
+                    <a href="book-illustration.html" class="home-service-btn">Read More →</a>
+</div>
+
+<div class="col-12 col-lg-4 box">
+    <img src="https://img.icons8.com/?size=100&id=oNTEU8sbVPVY&format=png&color=1A1A1A" class="img-fluid" alt="Book Marketing" title="Book Marketing" loading="lazy" width="70" height="70">
+    <span class="h3" style="color: #fa9a0a;">Book Marketing</span>
+    <p>Strategic marketing support to increase visibility, reach target readers, and improve book sales performance through optimized positioning and audience-focused promotion.</p>
+                    <a href="book-marketing.html" class="home-service-btn">Read More →</a>
+</div>
+
+<div class="col-12 col-lg-4 box">
+    <img src="https://img.icons8.com/?size=100&id=20427&format=png&color=1A1A1A" class="img-fluid" alt="Audiobook Publishing" title="Audiobook Publishing" loading="lazy" width="70" height="70">
+    <span class="h3" style="color: #fa9a0a;">Audiobook Publishing</span>
+    <p>Turn your manuscript into a professional audiobook with narration, editing, sound quality enhancement, and platform-ready formatting for global distribution.</p>
+                    <a href="audio-book-publishing.html" class="home-service-btn">Read More →</a>
+</div>
+
+<div class="col-12 col-lg-4 box">
+    <img src="https://img.icons8.com/?size=100&id=u6SGklrDSZ3b&format=png&color=1A1A1A" class="img-fluid" alt="Author Website" title="Author Website" loading="lazy" width="70" height="70">
+    <span class="h3" style="color: #fa9a0a;">Author Website</span>
+    <p>Personal author websites designed to showcase your books, build your brand identity, and connect directly with readers through a professional online presence.</p>
+                    <a href="author-website.html" class="home-service-btn">Read More →</a>
+</div>
+                
+                
             </div>
         </div>
     </section>
@@ -862,6 +978,22 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         <li><a href="sitemap.html">Sitemap</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+<!-- Column 4 -->
+    <div class="new-footer-col">
+      <h3 class="new-footer-heading">Services</h3>
+      <ul class="new-footer-links">
+        <li><a href="book-editing.html">Book Editing</a></li>
+        <li><a href="proofreading.html">Proofreading</a></li>
+        <li><a href="book-formatting.html">Book Formatting</a></li>
+        <li><a href="book-cover-design.html">Book Cover Design</a></li>
+        <li><a href="childrens-book-publishing.html">Children’s Book Publishing</a></li>
+        <li><a href="book-illustration.html">Book Illustration</a></li>
+        <li><a href="book-marketing.html">Book Marketing</a></li>
+        <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
+        <li><a href="author-website.html">Author Website</a></li>
       </ul>
     </div>
 
