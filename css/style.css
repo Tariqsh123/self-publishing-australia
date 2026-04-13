@@ -1331,7 +1331,7 @@ ul li {
 }
 section.main-banner {
   background-color: #fff;
-  padding: 250px 0 70px;
+  padding: 150px 0 70px;
   width: 100%;
 }
 section.main-banner p {
@@ -4130,6 +4130,7 @@ section.about-reviews{
   font-size: 42px;
   font-weight: 700;
   color: #0f172a;
+  letter-spacing: 2px !important;
   margin-bottom: 10px;
   letter-spacing: -0.5px;
 }
@@ -4256,7 +4257,7 @@ section.about-reviews{
 
 /* LEFT (ORANGE - WE PROVIDE) */
 .service-page-comparison-we {
-  background: #e68a00;
+  background: linear-gradient(to top , #f5b400,#e68a00);
   color: #000;
 }
 
