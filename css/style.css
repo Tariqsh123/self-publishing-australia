@@ -4659,90 +4659,105 @@ section.about-reviews{
 
 
 #service-page-sample-section {
-  padding: 60px 0;
+  padding: 90px 0;
+  background: #f9fafb;
 }
 
-/* container */
 .service-page-sample-container {
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* box */
+/* MAIN CARD */
 .service-page-sample-box {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 18px;
   padding: 50px;
-  text-align: center;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
-  position: relative;
-  overflow: hidden;
-  background-color: #f5b40023;
-  border: 3px solid #f5b400;
+  border-radius: 22px;
+
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+
+  text-align: left;
 }
 
+/* badge */
+.service-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
 
 /* title */
 .service-page-sample-title {
-  font-size: 40px;
-  font-weight: 800;
+  font-size: 38px;
+  font-weight: 900;
+  color: #111;
   margin-bottom: 15px;
-  color: #111827;
+  line-height: 1.2;
 }
 
 /* subtitle */
 .service-page-sample-subtitle {
   font-size: 16px;
-  color: #4b5563;
-  max-width: 800px;
-  margin: 0 auto 25px;
-  line-height: 1.7;
+  color: #222;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  max-width: 700px;
+}
+
+/* divider */
+.service-divider {
+  width: 80px;
+  height: 4px;
+  background: #000;
+  margin-bottom: 25px;
+  border-radius: 10px;
 }
 
 /* list */
 .service-page-sample-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 30px;
+  margin-bottom: 30px;
 }
 
 .service-page-sample-list li {
   font-size: 15px;
-  margin-bottom: 10px;
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: left;
-  color: #374151;
+  margin-bottom: 12px;
+  color: #111;
+  padding-left: 22px;
   position: relative;
 }
 
-/* orange bullet accent */
 .service-page-sample-list li::before {
-  content: "✓";
-  color: #f5b400;
-  font-weight: 700;
-  margin-right: 8px;
+  content: "✔";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 /* button */
 .service-page-sample-btn {
   display: inline-block;
-  padding: 14px 34px;
-  background: #f5b400;
-  color: #000;
+  padding: 15px 34px;
+  background: #000;
+  color: #fff;
   font-weight: 700;
-  text-decoration: none;
   border-radius: 10px;
-  transition: 0.2s ease;
-  box-shadow: 0 10px 20px rgba(230,138,0,0.25);
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-/* button hover (subtle premium feel) */
 .service-page-sample-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(230,138,0,0.35);
+  background: #fff;
+  color: #000;
+  transform: translateY(-3px);
 }
 
 /* responsive */
@@ -4752,10 +4767,13 @@ section.about-reviews{
   }
 
   .service-page-sample-title {
-    font-size: 28px !important;
+    font-size: 28px;
+  }
+
+  .service-page-sample-subtitle {
+    font-size: 14px;
   }
 }
-
 
 .home-service-btn{
   height: fit-content;
