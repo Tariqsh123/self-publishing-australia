@@ -2421,7 +2421,7 @@ section.about-reviews{
 }
 
 .packages-card {
-  height: 250px;
+  height: 280px;
   width: calc(50% - 15px);
   background-color: white;
   display: flex; /* row layout */
