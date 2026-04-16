@@ -3047,6 +3047,8 @@ section.about-reviews{
 
   .dropdown.open .dropdown-menu {
     display: flex;
+    height: 150px;
+    overflow: auto;
   }
 
   .dropdown-menu li a {
