@@ -2553,3 +2553,313 @@ section.bg-services a,.btn-dual-shade{
     border-radius: 10px !important;
     background: #f5b400;
 }
+
+
+
+section.bg-services .h1{
+    font-family: tiempos-regular !important;
+    font-weight: 500 !important;
+    font-size: 45px !important;
+}
+section.bg-services p ,section.bp-sec-one p,.how-order ul li,section.bp-sec-one ul li,p{
+    line-height: normal !important;
+        font-family: amazon-ember-regular !important;
+        font-weight: normal !important;
+        font-size: 20px !important;
+}
+section.bg-services a, .btn-dual-shade{
+        font-family: amazon-ember-regular !important;
+        font-weight: normal !important;
+        color: #1e2125 !important;
+        font-size: 20px !important;
+}
+section.bg-services .hr-line,.hr-line{
+    display: none !important;
+}
+.h2{
+    font-family: tiempos-regular !important;
+    font-weight: 500 !important;
+    font-size: 45px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+section.bp-sec-one ul li ,.how-order ul li{
+    list-style: none;
+    position: relative;
+}
+section.bp-sec-one ul li::before,.how-order ul li::before{
+    content: "✔";
+    font-size: 20px !important;
+    color: #ff753e;
+}
+section.bp-sec-one .btn-dual-shade{
+    padding:5px 20px !important;
+    width: fit-content;
+}
+section.bp-sec-two a{
+    color: #f5b400;
+}
+.bp-sec-two p{
+    text-align: center;
+}
+.stop-heading{
+    font-size: 25px !important;
+}
+h1 , h2 , h3, h4, h5, h6{
+
+    font-family: tiempos-regular !important;
+}
+.cta-banner .h2{
+    text-align: left !important;
+}
+.about-reviews-heading-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.h3, .h4, h3, h4 {
+    color: #000;
+    display: block;
+    font-family: tiempos-regular;
+}
+section.about-reviews .box .h3 {
+    font-weight: normal !important;
+}
+section.about-reviews .box .h4 {
+    font-size: medium !important;
+    font-weight: normal !important;
+}
+section.about-reviews .box p {
+    margin: 20px auto !important;
+    width: auto !important;
+    font-size: small !important;
+}
+section.book-publisher p{
+    text-align: center;
+}
+section.book-publisher .h4 ,section.book-publisher .h3 {
+    text-align: center;
+    font-size: 21px !important;
+}
+section.faq-form .accordion .accordion-item .accordion-body{
+    padding: 0 30px;
+}
+@media(max-width:600px){
+    section.bp-sec-one ul li, .how-order ul li {
+        text-align: left;
+        width: 250px;
+        margin: 20px auto;
+    }
+        section.bp-sec-one ul li{
+            margin: 10px auto;
+        }
+        .cta-banner .h2{
+            text-align: center !important;
+        }
+}
+
+
+#new-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222e3e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+    z-index: 999;
+    font-family: Arial, sans-serif;
+    transition: box-shadow 0.3s;
+  }
+
+  #new-nav-container.scrolled {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* ---------------- Logo ---------------- */
+  #new-nav-logo img {
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  /* ---------------- Nav Menu ---------------- */
+  #new-nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  #new-nav-menu li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  #new-nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    /* font-weight: 500; */
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+  }
+
+  #new-nav-menu li a:hover {
+    color: #ffb703;
+  }
+
+  /* ---------------- Button ---------------- */
+  #new-nav-button {
+    background-color: #ffb703;
+    color: #222e3e;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  #new-nav-button:hover {
+    background-color: #e6a300;
+  }
+
+  /* ---------------- Hamburger ---------------- */
+  #new-nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  #new-nav-hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+
+  /* ---------------- Responsive ---------------- */
+  @media (max-width: 992px) {
+    #new-nav-menu {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      flex-direction: column;
+      background-color: #222e3e;
+      width: 100%;
+      padding: 2rem 0;
+      gap: 1rem;
+      text-align: center;
+      transition: left 0.3s ease;
+    }
+
+    #new-nav-menu.active {
+      left: 0;
+    }
+
+    #new-nav-hamburger {
+      display: flex;
+    }
+
+    #new-nav-button {
+      display: none;
+    }
+
+    #new-nav-logo img {
+      height: 50px;
+    }
+
+    #new-nav-menu li, #new-nav-menu li a {
+      height: auto;
+    }
+  }
+  /* Dropdown parent */
+.dropdown {
+  position: relative;
+}
+
+/* Hidden submenu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  background: #222e3e;
+  min-width: 230px;
+  border: 1px solid white;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* submenu items */
+.dropdown-menu li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* Show on hover (desktop) */
+/* Desktop hover only */
+@media (min-width: 993px) {
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+}
+@media (max-width: 992px) {
+  .dropdown{
+    flex-direction: column;
+  }
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+    height: 150px;
+    overflow: auto;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px;
+  }
+}
+
+  /* Hamburger animation */
+  .rotate1 { transform: rotate(45deg) translate(5px, 5px); }
+  .rotate2 { transform: rotate(-45deg) translate(5px, -5px); }
+  .fade { opacity: 0; }
+
+
+  .dropdown-toggle::after{
+    display: none;
+  }
