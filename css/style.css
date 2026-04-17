@@ -2124,7 +2124,7 @@ section.why-choose .box p {
     }
 }
 
-.faq-section {
+/* .faq-section {
     padding: 60px 20px;
     background: #f9f9f9;
 }
@@ -2183,8 +2183,6 @@ section.why-choose .box p {
 .faq-item.active .faq-icon {
     content: "-";
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .faq-heading {
         font-size: 26px;
@@ -2192,7 +2190,7 @@ section.why-choose .box p {
     .faq-question {
         font-size: 16px;
     }
-}
+} */
 
 @media(max-width:600px){
 section.who-we-are.top {
@@ -4797,4 +4795,278 @@ section.about-reviews{
   text-decoration: none;
   font-size: large !important;
   font-weight: 500;
+}
+
+
+.accordion {
+    --bs-accordion-color: #212529;
+    --bs-accordion-bg: #fff;
+    --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--bs-border-color);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: 0.375rem;
+    --bs-accordion-inner-border-radius: calc(0.375rem - 1px);
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: #212529;
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    --bs-accordion-btn-focus-border-color: #86b7fe;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+    --bs-accordion-body-padding-x: 1.25rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-active-color: #0c63e4;
+    --bs-accordion-active-bg: #e7f1ff
+}
+
+.accordion-button {
+    align-items: center;
+    background-color: var(--bs-accordion-btn-bg);
+    border: 0;
+    border-radius: 0;
+    color: var(--bs-accordion-btn-color);
+    display: flex;
+    font-size: 1rem;
+    overflow-anchor: none;
+    padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+    position: relative;
+    text-align: left;
+    transition: var(--bs-accordion-transition);
+    width: 100%
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .accordion-button {
+        transition: none
+    }
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-accordion-active-bg);
+    box-shadow: inset 0 calc(var(--bs-accordion-border-width)*-1) 0 var(--bs-accordion-border-color);
+    color: var(--bs-accordion-active-color)
+}
+
+.accordion-button:not(.collapsed):after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    transform: var(--bs-accordion-btn-icon-transform)
+}
+
+.accordion-button:after {
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    content: "";
+    flex-shrink: 0;
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    transition: var(--bs-accordion-btn-icon-transition);
+    width: var(--bs-accordion-btn-icon-width)
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .accordion-button:after {
+        transition: none
+    }
+}
+
+.accordion-button:hover {
+    z-index: 2
+}
+
+.accordion-button:focus {
+    border-color: var(--bs-accordion-btn-focus-border-color);
+    box-shadow: var(--bs-accordion-btn-focus-box-shadow);
+    outline: 0;
+    z-index: 3
+}
+
+.accordion-header {
+    margin-bottom: 0
+}
+
+.accordion-item {
+    background-color: var(--bs-accordion-bg);
+    border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+    color: var(--bs-accordion-color)
+}
+
+.accordion-item:first-of-type {
+    border-top-left-radius: var(--bs-accordion-border-radius);
+    border-top-right-radius: var(--bs-accordion-border-radius)
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: var(--bs-accordion-inner-border-radius);
+    border-top-right-radius: var(--bs-accordion-inner-border-radius)
+}
+
+.accordion-item:not(:first-of-type) {
+    border-top: 0
+}
+
+.accordion-item:last-of-type {
+    border-bottom-left-radius: var(--bs-accordion-border-radius);
+    border-bottom-right-radius: var(--bs-accordion-border-radius)
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-left-radius: var(--bs-accordion-inner-border-radius);
+    border-bottom-right-radius: var(--bs-accordion-inner-border-radius)
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+    border-bottom-left-radius: var(--bs-accordion-border-radius);
+    border-bottom-right-radius: var(--bs-accordion-border-radius)
+}
+
+.accordion-body {
+    padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x)
+}
+
+.faqs .accordion-button {
+    font-size: 18px
+}
+
+.faqs .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    box-shadow: none;
+    color: #333;
+    font-weight: 400
+}
+
+.faqs .accordion-item {
+    border: none;
+    border-bottom: 1px solid #c9c9c9
+}
+
+.faqs .accordion-button {
+    padding: 30px 10px
+}
+
+.faqs .accordion-body {
+    color: #333;
+    padding: 0 20px 20px
+}
+
+.faqs .accordion-button:focus {
+    border-color: unset;
+    box-shadow: none
+}
+
+section.faq-form {
+    background: linear-gradient(0deg, #dfffff, #fcfcfc)
+}
+
+section.faq-form hr {
+    margin-left: 0
+}
+
+section.faq-form .accordion {
+    margin-bottom: 40px
+}
+
+section.faq-form .accordion .accordion-item {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(51, 51, 51, .2)
+}
+
+section.faq-form .accordion .accordion-item .accordion-header button {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #333 !important;
+    font-family: Zilla Slab;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 25px 30px;
+    position: relative
+}
+
+section.faq-form .accordion .accordion-item .accordion-header button:before {
+    background: url(../images/faq-before.webp);
+    background-repeat: no-repeat;
+    bottom: auto;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: auto;
+    width: 20px
+}
+
+section.faq-form .accordion .accordion-item .accordion-header button:after {
+    filter: opacity(.3)
+}
+
+section.faq-form .accordion .accordion-item .accordion-header button:not(.collapsed):after {
+    filter: opacity(.3) brightness(0);
+    transform: rotate(270deg)
+}
+
+section.faq-form .accordion .accordion-item .accordion-body {
+    padding: 0 0 20px
+}
+
+section.faq-form form {
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    margin-top: 20px;
+    padding: 30px 20px
+}
+
+section.faq-form form .form-label {
+    background: #fff;
+    font-size: 14px;
+    margin: -9px 0 0 20px;
+    position: absolute
+}
+
+section.faq-form form input[type=email],
+section.faq-form form input[type=number],
+section.faq-form form input[type=text],
+section.faq-form form select {
+    box-shadow: none !important;
+    font-size: 14px !important;
+    height: 50px !important
+}
+
+section.faq-form form button {
+    border: transparent;
+    border-radius: 30px !important;
+    display: block !important;
+    font-size: 21px;
+    height: 50px;
+    max-width: 100%;
+    padding: 0;
+    width: 100% !important
+}
+section.faq-form .accordion .accordion-item .accordion-body{
+    padding: 0 30px;
+}
+section.faq-form{
+    background: #f5b4001f;
+}
+section.faq-form hr{
+  display: none;
+}
+section.faq-form .h2{
+  text-align: center;
+  font-size: 45px !important;
+}
+.checklist-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+section.faq-form form select{
+  margin-bottom: 10px;
 }
