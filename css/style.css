@@ -1638,6 +1638,15 @@ section.who-we-are .h5:before {
   left: 0;
   top: 0;
 }
+@media(max-width:600px){
+  section.who-we-are .h5{
+    padding: 0;
+  }
+  section.who-we-are {
+    padding: 40px 0;
+}
+
+}
 section.who-we-are .bracket {
   margin-bottom: 100px;
   position: relative;
@@ -5069,4 +5078,123 @@ section.faq-form .h2{
 }
 section.faq-form form select{
   margin-bottom: 10px;
+}
+
+.locations-main-container{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.locations-inner-container{
+  height: fit-content;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.locations-card-container{
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+  padding: 10px;
+}
+.locations-card-main {
+    display: flex;
+    max-width: 380px;
+    width: 100%;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 10px 05px 25px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+
+/* LEFT SIDE */
+.locations-card-left {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    background: #023047;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+#location-sydney-bg{
+  background: url(https://media.istockphoto.com/id/1498418424/photo/sydneys-splendour.jpg?s=612x612&w=0&k=20&c=fEJhZM4J-p-Kq9nfN1FU13UxLdIHFkNeJJMJGYO303k=) center/cover;
+}
+#location-melbourne-bg{
+  background: url(https://www.travelvictoria.com.au/images/regions/melbourne/city/melbourne-city-22.jpg) center/cover;
+}
+#location-brisbane-bg{
+  background: url(https://t4.ftcdn.net/jpg/02/80/94/49/360_F_280944908_jywmQrwXEGCgX1V1jO9osM2Vp5FeVc74.jpg) center/cover;
+}
+#location-perth-bg{
+  background: url(https://images.pexels.com/photos/30835052/pexels-photo-30835052.jpeg?cs=srgb&dl=pexels-gsn-travel-30835052.jpg&fm=jpg) center/cover;
+}
+#location-adelaide-bg{
+  background: url(https://upload.wikimedia.org/wikipedia/commons/4/4e/Adelaide_city_centre_view.jpg) center/cover;
+}
+
+/* RIGHT SIDE */
+.locations-card-right {
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.locations-card-title {
+    font-size: 22px !important;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #fa9a0a;
+}
+
+.locations-card-text {
+    font-size: 18px !important;
+    margin-bottom: 15px;
+}
+
+.locations-card-btn {
+    text-decoration: none;
+    background: linear-gradient(45deg, #f5b400, #ff8800);
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: large;
+    width: fit-content;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    transition: 0.3s;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .locations-card-main {
+        flex-direction: column;
+        width: 90%;
+        height: fit-content;
+    }
+
+    .locations-card-left {
+        width: 100%;
+        height: 150px;
+        clip-path: none;
+    }
+
+    .locations-card-right {
+        width: 100%;
+        padding: 30px 10px;
+    }
 }
