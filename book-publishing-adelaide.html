@@ -116,9 +116,20 @@
       <li><a href="childrens-book-publishing.html">Childrens Book Publishing</a></li>
       <li><a href="book-illustration.html">Book Illustration</a></li>
       <li><a href="book-marketing.html">Book Marketing</a></li>
-      <li><a href="global-book-distribution.html">Global Book Distribution</a></li>
+       
       <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
       <li><a href="author-website.html">Author Website</a></li>
+    </ul>
+  </li >
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle">Locations ▾</a>
+
+    <ul class="dropdown-menu">
+      <li><a href="book-publishing-sydney.html">Book Publishing Sydney</a></li>
+      <li><a href="book-publishing-brisbane.html">Book Publishing Barisbane</a></li>
+      <li><a href="book-publishing-perth.html">Book Publishing Perth</a></li>
+      <li><a href="book-publishing-adelaide.html">Book Publishing Adelaide</a></li>
+      <li><a href="book-publishing-melbourne.html">Book Publishing Melbourne</a></li>
     </ul>
   </li>
 
@@ -167,11 +178,13 @@
     </header>
 
     <script>
-  const hamburger = document.getElementById('new-nav-hamburger');
+const hamburger = document.getElementById('new-nav-hamburger');
 const navMenu = document.getElementById('new-nav-menu');
 const navbar = document.getElementById('new-nav-container');
-const dropdown = document.querySelector(".dropdown");
-const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+// ✅ Select ALL dropdowns
+const dropdowns = document.querySelectorAll(".dropdown");
+
 
 // ✅ Hamburger toggle
 hamburger.addEventListener('click', (e) => {
@@ -183,23 +196,31 @@ hamburger.addEventListener('click', (e) => {
   hamburger.children[1].classList.toggle('fade');
   hamburger.children[2].classList.toggle('rotate2');
 
-  // menu close ho to dropdown bhi close
+  // menu close ho to sab dropdown bhi close
   if (!navMenu.classList.contains("active")) {
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Services dropdown (FIXED toggle)
-dropdownToggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
 
-  if (dropdown.classList.contains("open")) {
-    dropdown.classList.remove("open");
-  } else {
-    dropdown.classList.add("open");
-  }
+// ✅ Handle ALL dropdowns (Services + Locations)
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // pehle sab close
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove("open");
+    });
+
+    // current toggle
+    dropdown.classList.toggle("open");
+  });
 });
+
 
 // ✅ Outside click → close everything
 document.addEventListener("click", (e) => {
@@ -213,11 +234,12 @@ document.addEventListener("click", (e) => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Close menu ONLY when real links clicked (NOT Services toggle)
+
+// ✅ Close menu ONLY when real links clicked
 document.querySelectorAll("#new-nav-menu a").forEach(link => {
   link.addEventListener("click", () => {
 
@@ -229,9 +251,10 @@ document.querySelectorAll("#new-nav-menu a").forEach(link => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   });
 });
+
 
 // ✅ Scroll shadow
 window.addEventListener('scroll', () => {
@@ -414,8 +437,8 @@ window.addEventListener('scroll', () => {
         </div>
 
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="book-formatting">
-            <label class="form-check-label" for="book-formatting">Book Formatting</label>
+            <input type="checkbox" class="form-check-input" id="book-layout">
+            <label class="form-check-label" for="book-layout">Book Layout</label>
         </div>
 
         <div class="form-check">
@@ -504,77 +527,7 @@ window.addEventListener('scroll', () => {
         </div>
     </section>
 
-    <section class="locations-main-container">
-        <div class="locations-inner-container">
-            <h2 class="h2">Our Service Areas</h2>
-            <div class="locations-card-container">
-             
-                    <!-- 1 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-sydney-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Sydney</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-sydney.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-melbourne-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Melbourne</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-melbourne.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-brisbane-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Brisbane</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-brisbane.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-perth-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Perth</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-perth.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 5 -->
-    <!-- <div class="locations-card-main">
-        <div class="locations-card-left" id="location-adelaide-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Adelaide</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-adelaide.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div> -->
-    <!-- end -->
-
-                
-            </div>
-
-        </div>
-    </section>
+    
 
     <section class="why-choose">
         <div class="container">
@@ -1078,8 +1031,8 @@ window.addEventListener('scroll', () => {
         </div>
 
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="book-formatting">
-            <label class="form-check-label" for="book-formatting">Book Formatting</label>
+            <input type="checkbox" class="form-check-input" id="book-layout">
+            <label class="form-check-label" for="book-layout">Book Layout</label>
         </div>
 
         <div class="form-check">
@@ -1179,7 +1132,7 @@ window.addEventListener('scroll', () => {
         <li><a href="childrens-book-publishing.html">Children’s Book Publishing</a></li>
         <li><a href="book-illustration.html">Book Illustration</a></li>
         <li><a href="book-marketing.html">Book Marketing</a></li>
-        <li><a href="global-book-distribution.html">Global Book Distribution</a></li>
+         
         <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
         <li><a href="author-website.html">Author Website</a></li>
       </ul>
@@ -1203,7 +1156,7 @@ window.addEventListener('scroll', () => {
         <li><a href="packages/manuscript-rescue.html">Manuscript Rescue </a></li>
         <li><a href="packages/the-custom.html">The  Custom Package</a></li>
         <li><a href="packages/multi-platform-package.html">Multi Platform Package</a></li>
-        <li><a href="packages/global-distribution-package.html">Global Distribution Packages</a></li>
+        <li><a href="packages/global-distribution-package.html"> Global Distribution Package</a></li>
       </ul>
     </div>
 

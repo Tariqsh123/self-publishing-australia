@@ -108,16 +108,27 @@
     <a href="javascript:void(0)" class="dropdown-toggle">Services ▾</a>
 
     <ul class="dropdown-menu">
-      <li><a href="book-editing.html">Book Editing</a></li>
-      <li><a href="proofreading.html">Proofreading</a></li>
-      <li><a href="book-layout.html">Book Layout</a></li>
-      <li><a href="book-cover-design.html">Book Cover Design</a></li>
-      <li><a href="childrens-book-publishing.html">Childrens Book Publishing</a></li>
-      <li><a href="book-illustration.html">Book Illustration</a></li>
-      <li><a href="book-marketing.html">Book Marketing</a></li>
-      <li><a href="global-book-distribution.html">Global Book Distribution</a></li>
-      <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
-      <li><a href="author-website.html">Author Website</a></li>
+      <li><a href="../book-editing.html">Book Editing</a></li>
+      <li><a href="../proofreading.html">Proofreading</a></li>
+      <li><a href="../book-layout.html">Book Layout</a></li>
+      <li><a href="../book-cover-design.html">Book Cover Design</a></li>
+      <li><a href="../childrens-book-publishing.html">Childrens Book Publishing</a></li>
+      <li><a href="../book-illustration.html">Book Illustration</a></li>
+      <li><a href="../book-marketing.html">Book Marketing</a></li>
+       
+      <li><a href="../audio-book-publishing.html">Audiobook Publishing</a></li>
+      <li><a href="../author-website.html">Author Website</a></li>
+    </ul>
+  </li >
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle">Locations ▾</a>
+
+    <ul class="dropdown-menu">
+      <li><a href="../book-publishing-sydney.html">Book Publishing Sydney</a></li>
+      <li><a href="../book-publishing-brisbane.html">Book Publishing Barisbane</a></li>
+      <li><a href="../book-publishing-perth.html">Book Publishing Perth</a></li>
+      <li><a href="../book-publishing-adelaide.html">Book Publishing Adelaide</a></li>
+      <li><a href="../book-publishing-melbourne.html">Book Publishing Melbourne</a></li>
     </ul>
   </li>
 
@@ -166,11 +177,13 @@
     </header>
 
     <script>
-  const hamburger = document.getElementById('new-nav-hamburger');
+const hamburger = document.getElementById('new-nav-hamburger');
 const navMenu = document.getElementById('new-nav-menu');
 const navbar = document.getElementById('new-nav-container');
-const dropdown = document.querySelector(".dropdown");
-const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+// ✅ Select ALL dropdowns
+const dropdowns = document.querySelectorAll(".dropdown");
+
 
 // ✅ Hamburger toggle
 hamburger.addEventListener('click', (e) => {
@@ -182,23 +195,31 @@ hamburger.addEventListener('click', (e) => {
   hamburger.children[1].classList.toggle('fade');
   hamburger.children[2].classList.toggle('rotate2');
 
-  // menu close ho to dropdown bhi close
+  // menu close ho to sab dropdown bhi close
   if (!navMenu.classList.contains("active")) {
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Services dropdown (FIXED toggle)
-dropdownToggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
 
-  if (dropdown.classList.contains("open")) {
-    dropdown.classList.remove("open");
-  } else {
-    dropdown.classList.add("open");
-  }
+// ✅ Handle ALL dropdowns (Services + Locations)
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // pehle sab close
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove("open");
+    });
+
+    // current toggle
+    dropdown.classList.toggle("open");
+  });
 });
+
 
 // ✅ Outside click → close everything
 document.addEventListener("click", (e) => {
@@ -212,11 +233,12 @@ document.addEventListener("click", (e) => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Close menu ONLY when real links clicked (NOT Services toggle)
+
+// ✅ Close menu ONLY when real links clicked
 document.querySelectorAll("#new-nav-menu a").forEach(link => {
   link.addEventListener("click", () => {
 
@@ -228,9 +250,10 @@ document.querySelectorAll("#new-nav-menu a").forEach(link => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   });
 });
+
 
 // ✅ Scroll shadow
 window.addEventListener('scroll', () => {
@@ -283,7 +306,7 @@ window.addEventListener('scroll', () => {
   </a>
 
   <a href="global-distribution-package.html" title="the-work" class="the-rescue-package-link">
-    <img src="https://img.icons8.com/?size=100&id=DnvmgaR2XePx&format=png&color=fa9a0a" alt="Global Distribution Packages" title="Global Distribution Packages" loading="lazy"> Global Distribution Packages
+    <img src="https://img.icons8.com/?size=100&id=DnvmgaR2XePx&format=png&color=fa9a0a" alt=" Global Distribution Package" title=" Global Distribution Package" loading="lazy">  Global Distribution Package
   </a>
 </div>
 
@@ -469,7 +492,7 @@ window.addEventListener('scroll', () => {
         <li><a href="../childrens-book-publishing.html">Children’s Book Publishing</a></li>
         <li><a href="../book-illustration.html">Book Illustration</a></li>
         <li><a href="../book-marketing.html">Book Marketing</a></li>
-        <li><a href="../global-book-distribution.html">Global Book Distribution</a></li>
+         
         <li><a href="../audio-book-publishing.html">Audiobook Publishing</a></li>
         <li><a href="../author-website.html">Author Website</a></li>
       </ul>
@@ -493,7 +516,7 @@ window.addEventListener('scroll', () => {
         <li><a href="../packages/manuscript-rescue.html">Manuscript Rescue </a></li>
         <li><a href="../packages/the-custom.html">The  Custom Package</a></li>
         <li><a href="../packages/multi-platform-package.html">Multi Platform Package</a></li>
-        <li><a href="../packages/global-distribution-package.html">Global Distribution Packages</a></li>
+        <li><a href="../packages/global-distribution-package.html"> Global Distribution Package</a></li>
       </ul>
     </div>
 

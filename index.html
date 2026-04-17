@@ -116,9 +116,20 @@
       <li><a href="childrens-book-publishing.html">Childrens Book Publishing</a></li>
       <li><a href="book-illustration.html">Book Illustration</a></li>
       <li><a href="book-marketing.html">Book Marketing</a></li>
-      <li><a href="global-book-distribution.html">Global Book Distribution</a></li>
+       
       <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
       <li><a href="author-website.html">Author Website</a></li>
+    </ul>
+  </li >
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle">Locations ▾</a>
+
+    <ul class="dropdown-menu">
+      <li><a href="book-publishing-sydney.html">Book Publishing Sydney</a></li>
+      <li><a href="book-publishing-brisbane.html">Book Publishing Barisbane</a></li>
+      <li><a href="book-publishing-perth.html">Book Publishing Perth</a></li>
+      <li><a href="book-publishing-adelaide.html">Book Publishing Adelaide</a></li>
+      <li><a href="book-publishing-melbourne.html">Book Publishing Melbourne</a></li>
     </ul>
   </li>
 
@@ -167,11 +178,13 @@
     </header>
 
     <script>
-  const hamburger = document.getElementById('new-nav-hamburger');
+const hamburger = document.getElementById('new-nav-hamburger');
 const navMenu = document.getElementById('new-nav-menu');
 const navbar = document.getElementById('new-nav-container');
-const dropdown = document.querySelector(".dropdown");
-const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+// ✅ Select ALL dropdowns
+const dropdowns = document.querySelectorAll(".dropdown");
+
 
 // ✅ Hamburger toggle
 hamburger.addEventListener('click', (e) => {
@@ -183,23 +196,31 @@ hamburger.addEventListener('click', (e) => {
   hamburger.children[1].classList.toggle('fade');
   hamburger.children[2].classList.toggle('rotate2');
 
-  // menu close ho to dropdown bhi close
+  // menu close ho to sab dropdown bhi close
   if (!navMenu.classList.contains("active")) {
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Services dropdown (FIXED toggle)
-dropdownToggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
 
-  if (dropdown.classList.contains("open")) {
-    dropdown.classList.remove("open");
-  } else {
-    dropdown.classList.add("open");
-  }
+// ✅ Handle ALL dropdowns (Services + Locations)
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // pehle sab close
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove("open");
+    });
+
+    // current toggle
+    dropdown.classList.toggle("open");
+  });
 });
+
 
 // ✅ Outside click → close everything
 document.addEventListener("click", (e) => {
@@ -213,11 +234,12 @@ document.addEventListener("click", (e) => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   }
 });
 
-// ✅ Close menu ONLY when real links clicked (NOT Services toggle)
+
+// ✅ Close menu ONLY when real links clicked
 document.querySelectorAll("#new-nav-menu a").forEach(link => {
   link.addEventListener("click", () => {
 
@@ -229,9 +251,10 @@ document.querySelectorAll("#new-nav-menu a").forEach(link => {
     hamburger.children[1].classList.remove('fade');
     hamburger.children[2].classList.remove('rotate2');
 
-    dropdown.classList.remove("open");
+    dropdowns.forEach(d => d.classList.remove("open"));
   });
 });
+
 
 // ✅ Scroll shadow
 window.addEventListener('scroll', () => {
@@ -414,8 +437,8 @@ window.addEventListener('scroll', () => {
         </div>
 
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="book-formatting">
-            <label class="form-check-label" for="book-formatting">Book Formatting</label>
+            <input type="checkbox" class="form-check-input" id="book-layout">
+            <label class="form-check-label" for="book-layout">Book Layout</label>
         </div>
 
         <div class="form-check">
@@ -502,78 +525,7 @@ window.addEventListener('scroll', () => {
         </div>
     </section>
 
-    <section class="locations-main-container">
-        <div class="locations-inner-container">
-            <h2 class="h2">Our Service Areas</h2>
-            <div class="locations-card-container">
-             
-                    <!-- 1 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-sydney-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Sydney</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-sydney.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-melbourne-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Melbourne</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-melbourne.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-brisbane-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Brisbane</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-brisbane.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-perth-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Perth</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-perth.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="locations-card-main">
-        <div class="locations-card-left" id="location-adelaide-bg"></div>
-        <div class="locations-card-right">
-            <h4 class="locations-card-title">Book Publishing Adelaide</h4>
-            <p class="locations-card-text">
-                We deliver high-quality services with expert teams ensuring fast and reliable results in your area.
-            </p>
-            <a href="book-publishing-adelaide.html" class="locations-card-btn">Learn More</a>
-        </div>
-    </div>
-    <!-- end -->
-
-                
-            </div>
-
-        </div>
-    </section>
-
+    
     <section class="why-choose">
         <div class="container">
             <div class="col-12 col-lg-9 mb-4 mx-auto text-center">
@@ -732,7 +684,7 @@ window.addEventListener('scroll', () => {
             <div class="row">
                 <div class="col-12 col-lg-9 mx-auto text-center" style="width: 100%;">
                     <h2 class="h2">Simple and Clear <span style="color: #fa9a0a;"> Amazon Publishing Process</span> for Authors </h2>
-                    <p class="m-t-10" style="max-width: 900px; margin: 0 auto;">We guide you from manuscript to marketplace with a seamless Amazon KDP launch, ensuring your book goes live with out the usual headaches.</p>
+                    <p class="m-t-10" style="max-width: 900px; margin: 0 auto;">We guide you from manuscript to marketplace with a seamless Amazon KDP launch, ensuring your book goes live without the usual headaches.</p>
                 </div>
             </div>
             <div class="how-box-container">
@@ -791,8 +743,8 @@ window.addEventListener('scroll', () => {
                 <div class="col-12 col-lg-6">
                     <span class="h2">Reliable Australia-Wide Coverage for <span style="color: #fa9a0a;"> Amazon Publishing</span> Success </span>
                     <p>When you choose us, you are not just hiring a service provider, you are partnering with a team that truly understands the local publishing landscape. Our Amazon publishers Australia network ensures that whether you are in a capital city or a regional town, you receive the same dedicated attention and high-quality execution.</p>
-                    <p>For authors in New South Wales, our Amazon publishing Sydney team delivers fast, personalized support to the busy schedules of city-based writers. Down in Victoria, Amazon publishers Melbourne authors benefit from our deep understanding of the local literary community and market trends. Up in Queensland, Amazon publishing Brisbane clients enjoy responsive communication and seamless project management.</p>
-                    <p>Out west, Amazon publishing Perth authors receive the same white-glove service despite the distance, proving that location is never a barrier. And in South Australia, Amazon publishing Adelaide writers appreciate our commitment to timely delivery and transparent pricing, all in AUD.</p>
+                    <p>For authors in New South Wales, our Amazon publishing <a href="book-publishing-sydney.html" style="text-decoration: none;"> Sydney</a> team delivers fast, personalized support to the busy schedules of city-based writers. Down in Victoria, Amazon publishers <a href="book-publishing-melbourne.html" style="text-decoration: none;"> Melbourne</a> authors benefit from our deep understanding of the local literary community and market trends. Up in Queensland, Amazon publishing <a href="book-publishing-brisbane.html" style="text-decoration: none;"> Brisbane</a> clients enjoy responsive communication and seamless project management.</p>
+                    <p>Out west, Amazon publishing <a href="book-publishing-perth.html" style="text-decoration: none;"> Perth</a> authors receive the same white-glove service despite the distance, proving that location is never a barrier. And in South Australia, Amazon publishing <a href="book-publishing-adelaide.html" style="text-decoration: none;"> Adelaide </a>writers appreciate our commitment to timely delivery and transparent pricing, all in AUD.</p>
                     <p>No matter where you are based, from Sydney to Perth, Melbourne to Adelaide, Brisbane to regional Queensland, we deliver consistent, high-quality service. Your location does not affect your timeline, your quality, or your success. With us, every Australian author gets the same exceptional experience.</p>
                     <div class="m-t-30 d-flex" style="gap: 20px;">
                         <button class="btn-order open_popup" onclick="openPopup()">Publish from Anywhere in Australia</button>
@@ -860,6 +812,25 @@ window.addEventListener('scroll', () => {
                             title="Draft and Digital" loading="lazy" width="160" height="30">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="google-brand">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 col-lg-9 mx-auto ">
+                    <h2 class="h2">We Help Australian Authors Publish on Global Platforms</h2>
+                    <p>We don’t just offer self-publishing services for Amazon — we go far beyond that. Our team helps authors expand their reach by distributing their books across 50+ global platforms, ensuring your work is accessible to readers worldwide. From major online bookstores to international digital libraries, we make sure your book gets the visibility it deserves.</p>
+                    <p>With our global distribution network, your book is not limited to a single marketplace. We help you connect with a broader audience, increase your sales potential, and build a strong international presence as an author. Whether you're a first-time writer or an experienced author, we provide the tools and support needed to publish and succeed on a global scale.</p>
+                    <div class="m-t-30 d-flex" style="gap: 20px;justify-content: center;align-items: center; flex-wrap: wrap;">
+                        <button class="btn-order open_popup" onclick="openPopup()">Book Free Consultation</button>
+                        <a class="btn-live m-l-20" href="package.html">Get Professional Services</a>
+                    </div>
+
+                    
+                </div>
+                
             </div>
         </div>
     </section>
@@ -1014,8 +985,8 @@ window.addEventListener('scroll', () => {
         </div>
 
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="book-formatting">
-            <label class="form-check-label" for="book-formatting">Book Formatting</label>
+            <input type="checkbox" class="form-check-input" id="book-layout">
+            <label class="form-check-label" for="book-layout">Book Layout</label>
         </div>
 
         <div class="form-check">
@@ -1115,7 +1086,7 @@ window.addEventListener('scroll', () => {
         <li><a href="childrens-book-publishing.html">Children’s Book Publishing</a></li>
         <li><a href="book-illustration.html">Book Illustration</a></li>
         <li><a href="book-marketing.html">Book Marketing</a></li>
-        <li><a href="global-book-distribution.html">Global Book Distribution</a></li>
+         
         <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
         <li><a href="author-website.html">Author Website</a></li>
       </ul>
@@ -1139,7 +1110,7 @@ window.addEventListener('scroll', () => {
         <li><a href="packages/manuscript-rescue.html">Manuscript Rescue </a></li>
         <li><a href="packages/the-custom.html">The  Custom Package</a></li>
         <li><a href="packages/multi-platform-package.html">Multi Platform Package</a></li>
-        <li><a href="packages/global-distribution-package.html">Global Distribution Packages</a></li>
+        <li><a href="packages/global-distribution-package.html"> Global Distribution Package</a></li>
       </ul>
     </div>
 

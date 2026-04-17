@@ -2609,6 +2609,10 @@ h1 , h2 , h3, h4, h5, h6{
 
     font-family: tiempos-regular !important;
 }
+.h2{
+    width: 100%;
+    max-width: 900px;
+}
 .cta-banner .h2{
     text-align: left !important;
 }
@@ -2697,6 +2701,7 @@ section.faq-form .accordion .accordion-item .accordion-body{
     flex: 1;
     justify-content: center;
     align-items: center;
+    margin: 0;
     transition: all 0.3s ease;
   }
 
@@ -2710,7 +2715,7 @@ section.faq-form .accordion .accordion-item .accordion-body{
     color: #fff;
     text-decoration: none;
     /* font-weight: 500; */
-    font-size: 1rem;
+    font-size: 14px;
     padding: 0.5rem 0;
     transition: color 0.3s;
   }
@@ -2728,7 +2733,7 @@ section.faq-form .accordion .accordion-item .accordion-body{
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 15px;
     transition: background 0.3s;
   }
 
@@ -3058,4 +3063,34 @@ section.children-cover {
     .children-page-bp-sec-one .h2 {
     text-align: center;
 }
+}
+
+.new-footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1400px;
+  margin: auto;
+}
+@media(max-width:400px){
+  .new-footer-col{
+    width: 100%;
+  }
+}
+
+.h2 {
+    margin-bottom: 20px;
+}
+
+
+.book-publisher .h4,.book-publisher .h3,.book-publisher p{
+    text-align: left !important;
+}
+@media(max-width:600px){
+ .book-publisher .h4,.book-publisher .h3,.book-publisher p{
+    text-align: center !important;
+}   
 }

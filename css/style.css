@@ -2236,23 +2236,28 @@ section.about-reviews{
 
 /* GRID */
 .new-footer-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 50px;
   max-width: 1400px;
   margin: auto;
 }
 
+
 /* COLUMN */
 .new-footer-col {
   position: relative;
+  width: 220px;
 }
 
 
 
 /* LOGO */
 .new-footer-logo {
-  width: 260px;
+  width: 230px;
   margin-bottom: 25px;
 }
 
@@ -2394,6 +2399,11 @@ section.about-reviews{
 
   .new-footer-payment {
     width: 180px;
+  }
+}
+@media(max-width:400px){
+  .new-footer-col{
+    width: 100%;
   }
 }
 
@@ -2919,7 +2929,7 @@ section.about-reviews{
     color: #fff;
     text-decoration: none;
     /* font-weight: 500; */
-    font-size: 1rem;
+    font-size: 14px;
     padding: 0.5rem 0;
     transition: color 0.3s;
   }
@@ -2937,7 +2947,7 @@ section.about-reviews{
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 15px;
     transition: background 0.3s;
   }
 
