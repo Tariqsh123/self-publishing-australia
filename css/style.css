@@ -5208,3 +5208,6 @@ section.faq-form form select{
         padding: 30px 10px;
     }
 }
+section.faq-form form input[type=text]{
+  margin-bottom: 5px;
+}
