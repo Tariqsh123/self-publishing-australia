@@ -3039,3 +3039,23 @@ section.faq-form{
   }
 }
 
+
+
+
+.children-page-bp-sec-one .h2{
+    text-align: left;
+}
+section.children-cover {
+    background: url(https://www.bookcoverdesigners.co.uk/frontend/images/bg/children-cover.webp);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-gradient {
+    background:#f5b4001f  !important;
+}
+@media(max-width:600px){
+    .children-page-bp-sec-one .h2 {
+    text-align: center;
+}
+}
