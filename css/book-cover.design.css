@@ -2170,40 +2170,6 @@ section.faq-form .accordion .accordion-item .accordion-body {
     padding: 0 0 20px
 }
 
-section.faq-form form {
-    background: #fff;
-    border-radius: 10px;
-    display: block;
-    margin-top: 20px;
-    padding: 30px 20px
-}
-
-section.faq-form form .form-label {
-    background: #fff;
-    font-size: 14px;
-    margin: -9px 0 0 20px;
-    position: absolute
-}
-
-section.faq-form form input[type=email],
-section.faq-form form input[type=number],
-section.faq-form form input[type=text],
-section.faq-form form select {
-    box-shadow: none !important;
-    font-size: 14px !important;
-    height: 50px !important
-}
-
-section.faq-form form button {
-    border: transparent;
-    border-radius: 30px !important;
-    display: block !important;
-    font-size: 21px;
-    height: 50px;
-    max-width: 100%;
-    padding: 0;
-    width: 100% !important
-}
 
 @media (max-width:576px) {
     .content-area .h2 {
@@ -2558,107 +2524,6 @@ section.faq-form form button {
 
 
 
-.form-details {
-    border: 4px solid #222e3e;
-    margin-left: auto;
-    max-width: 460px;
-    height: 100%;
-    padding: 24px 20px;
-}
-
-.form-details .p-right {
-    padding-right: 0;
-}
-
-.form-details label {
-    display: block;
-}
-
-.form-details p {
-    font-family: amazon-ember-bold;
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
-    margin-top: 0;
-}
-
-.form-details input,
-.form-details select {
-    cursor: pointer;
-    height: 40px;
-}
-
-.form-details .form-control {
-    border: 2px solid #eaeded;
-    color: #363636;
-    font-family: amazon-ember-regular;
-    margin-bottom: 12px;
-}
-
-.form-details .form-control:focus {
-    border: 2px solid #fa9a0a;
-    box-shadow: unset !important;
-}
-
-.form-details .form-select {
-    border: 2px solid #eaeded;
-    color: #363636;
-    font-family: amazon-ember-regular;
-    margin-bottom: 12px;
-}
-
-.form-details .form-select:focus {
-    border: 2px solid #fa9a0a;
-    box-shadow: unset !important;
-}
-
-.form-details .checklist-box {
-    color: #363636;
-    -moz-column-count: 3;
-    column-count: 3;
-    display: block;
-    font-family: amazon-ember-regular;
-    margin-bottom: 12px;
-}
-
-.form-details .checklist-box input {
-    background-color: transparent;
-    border: 2px solid #eaeded;
-    cursor: pointer;
-    height: 18px;
-    width: 18px;
-}
-
-.form-details .checklist-box input:checked {
-    background-color: #fa9a0a;
-    border: 2px solid #fa9a0a;
-}
-
-.form-details .checklist-box input:focus {
-    border: 2px solid #fa9a0a;
-    box-shadow: unset !important;
-}
-
-.form-details .checklist-box label {
-    cursor: pointer;
-    display: inline-block !important;
-    font-size: 14px;
-    margin-top: 3px !important;
-}
-
-.form-details .checklist-box .form-check {
-    cursor: pointer;
-}
-
-.form-details .submit button {
-    font-family: amazon-ember-bold;
-    width: 100%;
-}
-
-section.faq-form form {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 .home-banner {
     margin-top: 110px;
 }
@@ -2966,6 +2831,8 @@ section.bp-sec-two a{
 }
 .stop-heading{
     font-size: 25px !important;
+    font-family: tiempos-regular !important;
+    
 }
 h1 , h2 , h3, h4, h5, h6{
 
@@ -3018,6 +2885,7 @@ section.faq-form .accordion .accordion-item .accordion-body{
     }
         section.bp-sec-one ul li{
             margin: 10px auto;
+            width: 90%;
         }
         .cta-banner .h2{
             text-align: center !important;
@@ -3466,4 +3334,112 @@ section.faq-form{
  .book-publisher .h4,.book-publisher .h3,.book-publisher p{
     text-align: center !important;
 }   
+}
+
+
+
+
+section.faq-form .form-details {
+  border: 4px solid #222e3e;
+  margin-left: auto;
+  max-width: 460px;
+  height: fit-content;
+  padding: 24px 20px;
+}
+section.faq-form .form-details .p-right {
+  padding-right: 0;
+}
+section.faq-form .form-details label {
+  display: block;
+}
+section.faq-form .form-details p {
+  font-family: amazon-ember-bold;
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
+  margin-top: 0;
+}
+section.faq-form .form-details input,
+section.faq-form .form-details select {
+  cursor: pointer;
+  height: 40px;
+}
+section.faq-form .form-details .form-control {
+  border: 2px solid #eaeded;
+  color: #363636;
+  font-family: amazon-ember-regular;
+  margin-bottom: 12px;
+}
+section.faq-form .form-details .form-control:focus {
+  border: 2px solid #fa9a0a;
+  box-shadow: unset !important;
+}
+section.faq-form .form-details .form-select {
+  border: 2px solid #eaeded;
+  color: #363636;
+  font-family: amazon-ember-regular;
+  margin-bottom: 12px;
+}
+section.faq-form .form-details .form-select:focus {
+  border: 2px solid #fa9a0a;
+  box-shadow: unset !important;
+}
+section.faq-form .form-details .checklist-box {
+  color: #363636;
+  -moz-column-count: 3;
+  column-count: 3;
+  display: block;
+  font-family: amazon-ember-regular;
+  margin-bottom: 12px;
+}
+section.faq-form .form-details .checklist-box input {
+  background-color: transparent;
+  border: 2px solid #eaeded;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+section.faq-form .form-details .checklist-box input:checked {
+  background-color: #fa9a0a;
+  border: 2px solid #fa9a0a;
+}
+section.faq-form .form-details .checklist-box input:focus {
+  border: 2px solid #fa9a0a;
+  box-shadow: unset !important;
+}
+section.faq-form .form-details .checklist-box label {
+  cursor: pointer;
+  display: inline-block !important;
+  font-size: 14px;
+  margin-top: 3px !important;
+}
+section.faq-form .form-details .checklist-box .form-check {
+  cursor: pointer;
+}
+section.faq-form .form-details .submit button {
+  font-family: amazon-ember-bold;
+  width: 100%;
+}
+@media (min-width: 1220px) and (max-width: 1399px) {
+  section.faq-form .form-details .checklist-box label {
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 991px) {
+
+  section.faq-form .form-details {
+    margin: 50px auto 0;
+  }
+
+  section.faq-form .form-details {
+    margin-top: 40px;
+  }
+
+}
+@media (max-width: 540px) {
+
+  section.faq-form .form-details .checklist-box {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
 }
