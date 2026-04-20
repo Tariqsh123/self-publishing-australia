@@ -2236,24 +2236,26 @@ section.about-reviews{
 
 /* GRID */
 .new-footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
   gap: 50px;
   max-width: 1400px;
   margin: auto;
 }
 
-
 /* COLUMN */
 .new-footer-col {
-  position: relative;
-  width: 220px;
+  width: 100%;
 }
 
+/* Last 2 columns ko second row me center shift karna */
+.new-footer-col:nth-child(6) {
+  grid-column: 2 / 3;
+}
 
+.new-footer-col:nth-child(7) {
+  grid-column: 3 / 4;
+}
 
 /* LOGO */
 .new-footer-logo {
@@ -2407,7 +2409,17 @@ section.about-reviews{
   }
 }
 
+@media (max-width: 576px) {
+  .new-footer-container {
+    grid-template-columns: 1fr; /* ek row me ek hi column */
+  }
 
+  /* reset positions warna 6th & 7th shift ho jayenge */
+  .new-footer-col:nth-child(6),
+  .new-footer-col:nth-child(7) {
+    grid-column: auto;
+  }
+}
 
 
 /* Package Page */

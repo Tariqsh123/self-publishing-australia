@@ -1802,19 +1802,21 @@ header .top-bar ul li a i.fa-phone {
 section.bg-services {
     align-items: center;
     display: flex;
-    height: 500px
+    height: 500px;
+    background-color: #f5b4001f;
 }
 
 section.bg-services .cover-banner {
     height: 100%;
     position: absolute;
     width: 100%;
-    z-index: -1
+    z-index: -1;
+    display: none;
 }
 
 section.bg-services .h1,
 section.bg-services p {
-    color: #fff
+    color: #000
 }
 
 section.bg-services .hr-line {
@@ -2850,7 +2852,7 @@ section.faq-form{
 /* GRID */
 .new-footer-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
   gap: 50px;
   max-width: 1400px;
   margin: auto;
@@ -2858,7 +2860,16 @@ section.faq-form{
 
 /* COLUMN */
 .new-footer-col {
-  position: relative;
+  width: 100%;
+}
+
+/* Last 2 columns ko second row me center shift karna */
+.new-footer-col:nth-child(6) {
+  grid-column: 2 / 3;
+}
+
+.new-footer-col:nth-child(7) {
+  grid-column: 3 / 4;
 }
 
 
@@ -3033,19 +3044,15 @@ section.children-cover {
 }
 }
 
-.new-footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 50px;
-  max-width: 1400px;
-  margin: auto;
-}
-@media(max-width:400px){
-  .new-footer-col{
-    width: 100%;
+@media (max-width: 576px) {
+  .new-footer-container {
+    grid-template-columns: 1fr; /* ek row me ek hi column */
+  }
+
+  /* reset positions warna 6th & 7th shift ho jayenge */
+  .new-footer-col:nth-child(6),
+  .new-footer-col:nth-child(7) {
+    grid-column: auto;
   }
 }
 

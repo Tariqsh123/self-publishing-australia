@@ -1872,12 +1872,13 @@ header .top-bar ul li a i.fa-phone {
     right: 0;
     top: 0;
     width: 100%;
-    z-index: -1
+    z-index: -1;
+    background: #f5b4001f;
 }
 
 .home-banner .banner-image .h1,
 .home-banner .banner-image p {
-    color: #fff;
+    color: #000;
     max-height: 180px;
     max-width: 510px;
     min-height: 40px;
@@ -1897,7 +1898,8 @@ header .top-bar ul li a i.fa-phone {
 
 .home-banner .banner-image .tag {
     display: block;
-    margin: 20px 0
+    margin: 20px 0;
+    color: #000;
 }
 
 .home-banner .banner-image ul {
@@ -3108,7 +3110,7 @@ section.faq-form{
 /* GRID */
 .new-footer-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
   gap: 50px;
   max-width: 1400px;
   margin: auto;
@@ -3116,10 +3118,17 @@ section.faq-form{
 
 /* COLUMN */
 .new-footer-col {
-  position: relative;
+  width: 100%;
 }
 
+/* Last 2 columns ko second row me center shift karna */
+.new-footer-col:nth-child(6) {
+  grid-column: 2 / 3;
+}
 
+.new-footer-col:nth-child(7) {
+  grid-column: 3 / 4;
+}
 
 /* LOGO */
 .new-footer-logo {
@@ -3307,22 +3316,18 @@ section.faq-form{
     margin: 0 auto;
 } 
 }
-.new-footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 50px;
-  max-width: 1400px;
-  margin: auto;
-}
-@media(max-width:400px){
-  .new-footer-col{
-    width: 100%;
+
+@media (max-width: 576px) {
+  .new-footer-container {
+    grid-template-columns: 1fr; /* ek row me ek hi column */
+  }
+
+  /* reset positions warna 6th & 7th shift ho jayenge */
+  .new-footer-col:nth-child(6),
+  .new-footer-col:nth-child(7) {
+    grid-column: auto;
   }
 }
-
 .h2 {
     margin-bottom: 20px !important;
     max-width: 900px !important;
