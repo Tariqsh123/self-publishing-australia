@@ -5,7 +5,7 @@ body {
 }
 
 .blog-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   display: flex;
   gap: 20px;
@@ -164,7 +164,8 @@ body {
 
 /* BUTTON STYLE */
 .blog-cta-form input[type="submit"] {
-  padding: 12px 20px;
+  padding: 14px 10px;
+  font-size: small;
   border: none;
   border-radius: 0px 06px 06px 0px;
   background: #111;
@@ -363,5 +364,8 @@ body {
 @media(max-width:768px){
     .conclusion-author-box{
         flex-direction: column;
+    }
+    .blog-left,.blog-right{
+      width: 100%;
     }
 }
