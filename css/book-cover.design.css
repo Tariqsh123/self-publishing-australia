@@ -1845,6 +1845,10 @@ header .top-bar ul li a i.fa-phone {
     background: #f5b4001f;
 }
 
+.home-banner .banner-image .h1 {
+    font-weight: 500 !important;
+}
+
 .home-banner .banner-image .h1,
 .home-banner .banner-image p {
     color: #000;
@@ -2239,6 +2243,9 @@ section.faq-form .accordion .accordion-item .accordion-body {
     section.why-choose .choose-box svg {
         display: block;
         margin: 0 auto 10px
+    }
+    .home-banner .banner-image .h1 {
+        font-weight: 500 !important;
     }
     .home-banner .banner-image .h1,
     .home-banner .banner-image p {
