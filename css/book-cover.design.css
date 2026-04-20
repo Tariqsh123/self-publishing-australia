@@ -2478,6 +2478,7 @@ section.how-order .text-num {
 @media(max-width:600px) {
     .home-banner {
         margin-top: 80px;
+        background: #f5b4001f;
     }
 }
 
