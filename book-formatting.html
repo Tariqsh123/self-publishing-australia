@@ -110,17 +110,30 @@
     <ul class="dropdown-menu">
       <li><a href="book-editing.html">Book Editing</a></li>
       <li><a href="proofreading.html">Proofreading</a></li>
-      <li><a href="book-formatting.html">Book Formatting</a></li>
+      <li><a href="book-layout.html">Book Layout</a></li>
       <li><a href="book-cover-design.html">Book Cover Design</a></li>
       <li><a href="childrens-book-publishing.html">Childrens Book Publishing</a></li>
       <li><a href="book-illustration.html">Book Illustration</a></li>
       <li><a href="book-marketing.html">Book Marketing</a></li>
+       
       <li><a href="audio-book-publishing.html">Audiobook Publishing</a></li>
       <li><a href="author-website.html">Author Website</a></li>
+    </ul>
+  </li >
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle">Locations ▾</a>
+
+    <ul class="dropdown-menu">
+      <li><a href="book-publishing-sydney.html">Book Publishing Sydney</a></li>
+      <li><a href="book-publishing-brisbane.html">Book Publishing Barisbane</a></li>
+      <li><a href="book-publishing-perth.html">Book Publishing Perth</a></li>
+      <li><a href="book-publishing-adelaide.html">Book Publishing Adelaide</a></li>
+      <li><a href="book-publishing-melbourne.html">Book Publishing Melbourne</a></li>
     </ul>
   </li>
 
   <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="blog.html">Blogs</a></li>
   <li><a href="pricing.html">Pricing</a></li>
   <li><a href="free-qoute.html">Free Quote</a></li>
 </ul>
@@ -1255,6 +1268,8 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="locations.html">Locations</a></li>
         <li><a href="free-qoute.html">Free Quote</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -1418,6 +1433,23 @@ function showForm() {
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
 
+<script>
+    document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // closest parent .form-check
+        const parent = this.closest(".form-check");
+
+        // uske andar ka checkbox find karo
+        const checkbox = parent.querySelector(".form-check-input");
+
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    });
+});
+    </script>
 </body>
 
 </html>

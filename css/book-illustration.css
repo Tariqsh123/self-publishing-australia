@@ -2544,7 +2544,7 @@ section.bg-services a,
     font-family: amazon-ember-regular !important;
     font-weight: normal !important;
     color: #1e2125 !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
 section.bg-services .hr-line,
@@ -2655,6 +2655,7 @@ section.book-publisher .h3 {
 
 section.faq-form .accordion .accordion-item .accordion-body {
     padding: 0 30px;
+    padding-left: 30px;
 }
 
 @media(max-width:600px) {
@@ -2666,7 +2667,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
     }
     section.bp-sec-one ul li {
         margin: 10px auto;
-        width: 90%;
+        width: 95%;
     }
     .cta-banner .h2 {
         text-align: center !important;
@@ -2706,7 +2707,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
 
 #new-nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
     flex: 1;
     justify-content: center;
@@ -2741,11 +2742,11 @@ section.faq-form .accordion .accordion-item .accordion-body {
     background-color: #ffb703;
     color: #222e3e;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 15px;
+    font-size: small;
     transition: background 0.3s;
 }
 
@@ -2775,17 +2776,19 @@ section.faq-form .accordion .accordion-item .accordion-body {
 
 @media (max-width: 992px) {
     #new-nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        background-color: #222e3e;
-        width: 100%;
-        padding: 2rem 0;
-        gap: 1rem;
-        text-align: center;
-        transition: left 0.3s ease;
-    }
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  flex-direction: column;
+  max-height: calc(100vh - 70px); /* screen ke andar hi rahe */
+  overflow-y: auto; /* scroll enable */
+  background-color: #222e3e;
+  width: 100%;
+  padding: 2rem 0;
+  gap: 1rem;
+  text-align: center;
+  transition: left 0.3s ease;
+}
     #new-nav-menu.active {
         left: 0;
     }
@@ -2873,7 +2876,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
     }
     .dropdown.open .dropdown-menu {
         display: flex;
-        height: 150px;
+        height: auto;
         overflow: auto;
     }
     .dropdown-menu li a {
@@ -3269,5 +3272,8 @@ section.faq-form .form-details .submit button {
     section.faq-form .form-details .checklist-box {
         -moz-column-count: 2;
         column-count: 2;
+    }
+    #children-bottom-margin-btn{
+        margin-bottom: 50px;
     }
 }

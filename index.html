@@ -134,6 +134,7 @@
   </li>
 
   <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="blog.html">Blogs</a></li>
   <li><a href="pricing.html">Pricing</a></li>
   <li><a href="free-qoute.html">Free Quote</a></li>
 </ul>
@@ -826,7 +827,7 @@ window.addEventListener('scroll', () => {
         <div class="container">
             <div class="row text-center">
                 <div class="col-12 col-lg-9 mx-auto ">
-                    <h2 class="h2">We Help Australian Authors Publish on Global Platforms</h2>
+                    <h2 class="h2">We Help <span style="color: #fa9a0a;"> Australian Authors</span> Publish on Global Platforms</h2>
                     <p>We don’t just offer self-publishing services for Amazon — we go far beyond that. Our team helps authors expand their reach by distributing their books across 50+ global platforms, ensuring your work is accessible to readers worldwide. From major online bookstores to international digital libraries, we make sure your book gets the visibility it deserves.</p>
                     <p>With our global distribution network, your book is not limited to a single marketplace. We help you connect with a broader audience, increase your sales potential, and build a strong international presence as an author. Whether you're a first-time writer or an experienced author, we provide the tools and support needed to publish and succeed on a global scale.</p>
                     <div class="m-t-30 d-flex" style="gap: 20px;justify-content: center;align-items: center; flex-wrap: wrap;">
@@ -1073,6 +1074,7 @@ window.addEventListener('scroll', () => {
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="locations.html">Locations</a></li>
         <li><a href="free-qoute.html">Free Quote</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
@@ -1249,6 +1251,23 @@ function showForm() {
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
 
+    <script>
+    document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // closest parent .form-check
+        const parent = this.closest(".form-check");
+
+        // uske andar ka checkbox find karo
+        const checkbox = parent.querySelector(".form-check-input");
+
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    });
+});
+    </script>
 </body>
 
 </html>

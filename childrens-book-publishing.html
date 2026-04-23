@@ -137,6 +137,7 @@
   </li>
 
   <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="blog.html">Blogs</a></li>
   <li><a href="pricing.html">Pricing</a></li>
   <li><a href="free-qoute.html">Free Quote</a></li>
 </ul>
@@ -179,7 +180,6 @@
             </div>
         </div>
     </header>
-
     <script>
 const hamburger = document.getElementById('new-nav-hamburger');
 const navMenu = document.getElementById('new-nav-menu');
@@ -300,7 +300,7 @@ window.addEventListener('scroll', () => {
         <hr class="hr-line">
         <p style="text-align: center;">We design the best children's book covers that inculcate the habit of book reading in youngsters. By infusing finesse to the book cover design, our experts breathe life into the lifeless illustrated characters. Irrespective of how well-thought the children book front cover is – if an expert does not do it, it fails to attract the young eyes. And this is exactly where Book Cover Designer comes in.</p>
         <img data-src="https://www.bookcoverdesigners.co.uk/frontend/images/other/sturdy-book.webp" class="img-fluid lazyload d-block mx-auto " alt="Book Cover Designers UK - Sturdy Book" title="Book Cover Designers UK - Sturdy Book" width="443" height="380" loading="lazy">
-        <a href="free-qoute.html" class="btn-dual-shade m-t-30">Start Your Children Book</a>
+        <a href="free-qoute.html" class="btn-dual-shade m-t-30" id="children-bottom-margin-btn">Start Your Children Book</a>
     </div>
 <br>
 
@@ -786,6 +786,7 @@ window.addEventListener('scroll', () => {
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="locations.html">Locations</a></li>
         <li><a href="free-qoute.html">Free Quote</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
@@ -962,6 +963,23 @@ function showForm() {
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
 
+<script>
+    document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // closest parent .form-check
+        const parent = this.closest(".form-check");
+
+        // uske andar ka checkbox find karo
+        const checkbox = parent.querySelector(".form-check-input");
+
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    });
+});
+    </script>
 </body>
 
 </html>

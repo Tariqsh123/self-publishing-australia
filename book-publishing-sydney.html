@@ -92,20 +92,20 @@
 <body>
     <header class="header" id="scroll-control">
         <nav id="new-nav-container">
-            <!-- Logo -->
-            <div id="new-nav-logo">
-                <a href="index.html"><img src="images/logo.webp" alt="Logo"></a>
-            </div>
+  <!-- Logo -->
+  <div id="new-nav-logo">
+    <a href="index.html"><img src="images/logo.webp" alt="Logo"></a>
+  </div>
 
-            <!-- Nav Menu -->
-            <ul id="new-nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About</a></li>
+  <!-- Nav Menu -->
+  <ul id="new-nav-menu">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about-us.html">About</a></li>
 
-                <li><a href="portfolio.html">Portfolio</a></li>
+  <li><a href="portfolio.html">Portfolio</a></li>
 
-                <!-- SERVICES DROPDOWN -->
-                <li class="dropdown">
+  <!-- SERVICES DROPDOWN -->
+  <li class="dropdown">
     <a href="javascript:void(0)" class="dropdown-toggle">Services ▾</a>
 
     <ul class="dropdown-menu">
@@ -133,21 +133,22 @@
     </ul>
   </li>
 
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="free-qoute.html">Free Quote</a></li>
-            </ul>
+  <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="blog.html">Blogs</a></li>
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="free-qoute.html">Free Quote</a></li>
+</ul>
 
-            <!-- Button -->
-            <button id="new-nav-button" class="btn-live" type="button" onclick="openPopup()">BOOK A 30-MINUTE DISCOVERY CALL</button>
+  <!-- Button -->
+  <button id="new-nav-button" class="btn-live" type="button" onclick="openPopup()">BOOK A 30-MINUTE DISCOVERY CALL</button>
 
-            <!-- Hamburger -->
-            <div id="new-nav-hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
+  <!-- Hamburger -->
+  <div id="new-nav-hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
 
 
         <div class="top-bar">
@@ -160,12 +161,14 @@
                         <ul>
                             <li class="nav-item">
                                 <a class="nav-link" href="tel:+42333444555" title="Phone">
-                                    <i class="fa-solid fa-phone-flip"></i> +42 333 444 555
+                                    <i class="fa-solid fa-phone-flip"></i>
+                                    +42 333 444 555
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="mailto:info@bookpublishingaustralia.com" title="Email">
-                                    <i class="fa-solid fa-envelope"></i> info@bookpublishingaustralia.com
+                                    <i class="fa-solid fa-envelope"></i>
+                                    info@bookpublishingaustralia.com
                                 </a>
                             </li>
                         </ul>
@@ -1062,21 +1065,22 @@ window.addEventListener('scroll', () => {
 
             <!-- Column 4 -->
             <div class="new-footer-col">
-                <h3 class="new-footer-heading">Quick Links</h3>
-                <ul class="new-footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="locations.html">Locations</a></li>
-                    <li><a href="free-qoute.html">Free Quote</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                </ul>
-            </div>
+      <h3 class="new-footer-heading">Quick Links</h3>
+      <ul class="new-footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="free-qoute.html">Free Quote</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
 
             <!-- Column 4 -->
             <div class="new-footer-col">
@@ -1244,6 +1248,23 @@ window.addEventListener('scroll', () => {
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
 
+<script>
+    document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // closest parent .form-check
+        const parent = this.closest(".form-check");
+
+        // uske andar ka checkbox find karo
+        const checkbox = parent.querySelector(".form-check-input");
+
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    });
+});
+    </script>
 </body>
 
 </html>

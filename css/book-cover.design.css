@@ -1843,6 +1843,7 @@ header .top-bar ul li a i.fa-phone {
     width: 100%;
     z-index: -1;
     background: #f5b4001f;
+    display: none;
 }
 
 .home-banner .banner-image .h1 {
@@ -1885,13 +1886,17 @@ header .top-bar ul li a i.fa-phone {
 }
 
 .home-banner .banner-image a {
+    background: linear-gradient(90deg, #febf01 25%, #fa9a0a);
+    border: 2px solid #fdbc01;
+    border-radius: 8px;
+    color: #222e3e;
     display: inline-block;
-    min-height: 40px;
-    padding: 10px 50px;
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    user-select: text;
-    width: 200px
+    font-family: amazon-ember-medium;
+    font-size: large;
+    outline: none;
+    padding: 8px 30px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
 .home-banner .container {
@@ -2142,7 +2147,8 @@ section.faq-form .accordion .accordion-item .accordion-header button:not(.collap
 }
 
 section.faq-form .accordion .accordion-item .accordion-body {
-    padding: 0 0 20px
+    padding: 0 0 20px;
+    padding-left: 30px;
 }
 
 @media (max-width:576px) {
@@ -2433,22 +2439,23 @@ section.faq-form .accordion .accordion-item .accordion-body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 50px;
         align-items: center;
     }
 }
 
 .book-cover-designer-why-choose-btn {
+        background: linear-gradient(90deg, #febf01 25%, #fa9a0a);
+    border: 2px solid #fdbc01;
+    border-radius: 8px;
+    color: #222e3e;
     display: inline-block;
-    padding: 12px 25px;
-    background: #55908c;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-.book-cover-designer-why-choose-btn:hover {
-    background: #55908c;
-    color: #fff;
+    font-family: amazon-ember-medium;
+    font-size: large;
+    outline: none;
+    padding: 8px 30px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
 .home-banner {
@@ -2456,7 +2463,10 @@ section.faq-form .accordion .accordion-item .accordion-body {
 }
 
 .home-banner .banner-image ul li {
-    color: white;
+    color: black;
+}
+.home-banner .banner-image ul li svg  g path{
+    color: #f5b400;
 }
 
 .home-banner .banner-image a,
@@ -2556,7 +2566,7 @@ section.how-order .text-num {
     background-color: #ffb703;
     color: #222e3e;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
@@ -2753,7 +2763,7 @@ section.bg-services a,
     font-family: amazon-ember-regular !important;
     font-weight: normal !important;
     color: #1e2125 !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
 section.bg-services .hr-line,
@@ -2870,7 +2880,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
     }
     section.bp-sec-one ul li {
         margin: 10px auto;
-        width: 90%;
+        width: 95%;
     }
     .cta-banner .h2 {
         text-align: center !important;
@@ -2910,7 +2920,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
 
 #new-nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
     flex: 1;
     justify-content: center;
@@ -2945,11 +2955,11 @@ section.faq-form .accordion .accordion-item .accordion-body {
     background-color: #ffb703;
     color: #222e3e;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 15px;
+    font-size: small;
     transition: background 0.3s;
 }
 
@@ -2979,17 +2989,19 @@ section.faq-form .accordion .accordion-item .accordion-body {
 
 @media (max-width: 992px) {
     #new-nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        background-color: #222e3e;
-        width: 100%;
-        padding: 2rem 0;
-        gap: 1rem;
-        text-align: center;
-        transition: left 0.3s ease;
-    }
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  flex-direction: column;
+  max-height: calc(100vh - 70px); /* screen ke andar hi rahe */
+  overflow-y: auto; /* scroll enable */
+  background-color: #222e3e;
+  width: 100%;
+  padding: 2rem 0;
+  gap: 1rem;
+  text-align: center;
+  transition: left 0.3s ease;
+}
     #new-nav-menu.active {
         left: 0;
     }
@@ -3077,7 +3089,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
     }
     .dropdown.open .dropdown-menu {
         display: flex;
-        height: 150px;
+        height: auto;
         overflow: auto;
     }
     .dropdown-menu li a {

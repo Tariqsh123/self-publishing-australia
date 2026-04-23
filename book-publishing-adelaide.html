@@ -134,6 +134,7 @@
   </li>
 
   <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="blog.html">Blogs</a></li>
   <li><a href="pricing.html">Pricing</a></li>
   <li><a href="free-qoute.html">Free Quote</a></li>
 </ul>
@@ -1113,6 +1114,7 @@ window.addEventListener('scroll', () => {
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="locations.html">Locations</a></li>
         <li><a href="free-qoute.html">Free Quote</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
@@ -1289,6 +1291,23 @@ function showForm() {
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
 
+<script>
+    document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // closest parent .form-check
+        const parent = this.closest(".form-check");
+
+        // uske andar ka checkbox find karo
+        const checkbox = parent.querySelector(".form-check-input");
+
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    });
+});
+    </script>
 </body>
 
 </html>
