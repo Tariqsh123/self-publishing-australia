@@ -3090,7 +3090,9 @@ section.faq-form .accordion .accordion-item .accordion-body {
     .dropdown.open .dropdown-menu {
         display: flex;
         height: auto;
+    border-bottom: 1px solid #e68a00;
         overflow: auto;
+        border-radius: 0;
     }
     .dropdown-menu li a {
         padding: 10px;

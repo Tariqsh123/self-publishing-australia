@@ -2878,6 +2878,8 @@ section.faq-form .accordion .accordion-item .accordion-body {
         display: flex;
         height: auto;
         overflow: auto;
+    border-bottom: 1px solid #e68a00;
+    border-radius: 0;
     }
     .dropdown-menu li a {
         padding: 10px;
