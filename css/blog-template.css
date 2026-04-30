@@ -4,23 +4,31 @@ body {
     color: #2b2b2b;
 }
 
+/* CONTAINER */
 .blog-container {
     max-width: 1400px;
+    background: #fa9a0a13;
     margin: auto;
     display: flex;
     gap: 20px;
     padding: 40px 20px;
+    align-items: stretch; /* 🔥 FIX */
 }
-
 
 /* LEFT */
-
 .blog-left {
-    /* flex: 2; */
     width: 70%;
-    height: fit-content;
+    padding-right: 100px;
 }
 
+/* RIGHT */
+.blog-right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TEXT */
 .blog-breadcrumb {
     font-size: 13px;
     color: #8a8a8a;
@@ -42,6 +50,7 @@ body {
     text-decoration: none;
 }
 
+/* AUTHOR */
 .blog-author {
     display: flex;
     gap: 12px;
@@ -53,6 +62,7 @@ body {
     height: 55px;
     object-fit: contain;
     background-color: #fa9a0a;
+    border-radius: 50%;
 }
 
 .blog-author p {
@@ -61,14 +71,16 @@ body {
     color: gray;
 }
 
+/* CONTENT */
 .blog-subtitle {
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    padding-left: 20px;
 }
 
 .keyword-list {
-    padding-left: 20px;
+    padding-left: 50px !important;
 }
 
 .keyword-list li {
@@ -76,17 +88,22 @@ body {
     line-height: 1.6;
     font-size: 18px !important;
     margin-left: 20px;
-    list-style: disc !important;
+    position: relative;
+    list-style: none !important;
     color: #333;
 }
-
-
-/* bullet color change */
-
-.keyword-list li::marker {
-    color: #ff9800;
-    /* apna color yahan change karo */
+.keyword-list li::before {
+    content: "■";
+    font-size: 15px;
+    color: #ff5a2c;
+    position: absolute;
+    left: -30px;
+    top: 0px;
 }
+
+/* .keyword-list li::marker {
+    color: #ff9800;
+} */
 
 .blog-left p {
     font-size: 18px !important;
@@ -105,18 +122,7 @@ body {
     font-weight: bold;
 }
 
-
-/* RIGHT */
-
-.blog-right {
-    /* flex: 1; */
-    width: 30%;
-    height: fit-content;
-}
-
-
 /* CARD */
-
 .blog-card {
     background: #fff;
     border-radius: 12px;
@@ -125,9 +131,7 @@ body {
     border: 1px solid #eaeaea;
 }
 
-
 /* CTA */
-
 .blog-cta {
     text-align: center;
     background: linear-gradient(135deg, #ffb703, #fa9a0a);
@@ -161,37 +165,35 @@ body {
     line-height: 1.5;
 }
 
-
-/* FORM ROW DESIGN */
-
+/* FORM */
 .blog-cta-form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 0px;
+    gap: 10px;
+    width: 100%;
 }
 
-
-/* INPUT STYLE */
-
-.blog-cta-form input[type="text"] {
+.blog-cta-form input[type="text"],
+.blog-cta-form input[type="email"] {
     padding: 12px 15px;
     width: 100%;
+    max-width: 350px;
     border: none;
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 6px;
     outline: none;
 }
 
-
-/* BUTTON STYLE */
-
 .blog-cta-form input[type="submit"] {
-    padding: 14px 10px;
-    font-size: small;
+    padding: 12px;
+    width: 100%;
+    max-width: 350px;
+    font-size: medium;
     border: none;
-    border-radius: 0px 06px 06px 0px;
+    border-radius: 6px;
     background: #111;
     color: #fff;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -200,27 +202,16 @@ body {
     background: #000;
 }
 
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 600px) {
-    .blog-cta-form input[type="text"] {
-        width: 80%;
-        max-width: 320px;
-    }
-    .blog-cta-form input[type="submit"] {
-        width: fit-content;
-        padding: 10px;
-    }
+/* TOC */
+.blog-toc {
+    position: sticky;
+    top: 120px;
 }
 
 .blog-toc h4,
 .blog-about h4 {
     font-size: 22px !important;
 }
-
-
-/* TOC */
 
 .blog-toc ul {
     list-style: none;
@@ -234,36 +225,43 @@ body {
     margin-bottom: 10px;
     padding-left: 15px;
     position: relative;
+    cursor: pointer;
+}
+
+.blog-toc li:hover {
+    color: #ff5a2c;
 }
 
 .blog-toc li::before {
     content: "■";
-    font-size: 8px;
+    font-size: 15px;
     color: #ff5a2c;
     position: absolute;
-    left: 0;
-    top: 5px;
+    left: -5px;
+    top: 0px;
 }
 
+.blog-toc a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
 /* ABOUT */
-
 .about-main {
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
-    align-items: flex-start;
     margin: 20px 0;
 }
 
 .about-main img {
-    width: 45px;
+    width: auto;
+    height: 30px;
 }
 
 .about-row {
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
     align-items: center;
     margin: 20px 0;
 }
@@ -272,21 +270,15 @@ body {
     width: 40px;
 }
 
-
 /* CLIENTS */
-
 .client-heading-and-image {
-    height: fit-content;
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 20px;
 }
 
 .client-heading-and-image h4 {
     font-size: 22px !important;
-    margin-top: 5px;
 }
 
 .clients-banner {
@@ -297,30 +289,25 @@ body {
 .blog-clients-grid {
     display: grid;
     margin-top: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .blog-clients-grid img {
-    width: 100%;
-    filter: grayscale(100%);
+    width: auto;
+    height: 20px;
     opacity: 0.7;
 }
 
-
 /* NEIL */
-
 .blog-neil-box {
     display: flex;
-    gap: 10px;
     flex-direction: column;
     margin-top: 20px;
 }
 
 .blog-neil-box-img-and-text {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     gap: 20px;
 }
 
@@ -328,130 +315,63 @@ body {
     width: 60px;
     height: 60px;
     border: 3px solid #fa9a0a;
+    border-radius: 50%;
 }
 
-
-/* RESPONSIVE */
-
-@media(max-width: 900px) {
-    .blog-container {
-        flex-direction: column;
-    }
-}
-
-.blog-heading {
-    margin: 20px 0;
-    font-size: 30px !important;
-    color: #000;
-}
-
+/* AUTHOR BOX */
 .conclusion-author-box {
-    height: fit-content;
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     gap: 20px;
-    padding: 20px 30px;
-    padding-left: 0;
-}
-
-.conclusion-author-img-container {
-    height: 200px;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 30px 20px 0;
 }
 
 .conclusion-author-img-container img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+    height: 200px;
     background: #fa9a0a;
-}
-
-.conclusion-author-right-text-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-
-.conclusion-author-right-text-container span {
-    font-size: small !important;
-    width: 100%;
 }
 
 .conclusion-author-right-text-container h2 {
     color: #fa9a0a;
-    width: 100%;
-    text-align: left;
     font-size: 30px !important;
-    margin: 10px 0;
 }
 
-.conclusion-author-right-text-container h4 {
-    width: 100%;
-    text-align: left;
-    font-size: 15px !important;
-    margin: 0px 0 20px;
+/* FAQ */
+.blog-faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.conclusion-author-right-text-container p {
-    width: 100%;
-    text-align: left;
-    font-size: x-small !important;
+.blog-faq-box {
+    padding: 20px 10px;
+    border: 1px solid gainsboro;
+    background-color: #eaeaea;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .blog-container {
+        flex-direction: column;
+    }
+
+    .blog-left,
+    .blog-right {
+        width: 100%;
+    }
+
+    .blog-toc {
+        position: relative;
+        top: 0;
+    }
 }
 
 @media(max-width:768px) {
     .conclusion-author-box {
         flex-direction: column;
     }
-    .blog-left,
-    .blog-right {
-        width: 100%;
-    }
 }
 
-.blog-faq-container {
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.blog-faq-box {
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 10px;
-    border: 1px solid gainsboro;
-    background-color: #eaeaea;
-}
-
-.blog-faq-box h3 {
-    font-size: 20px !important;
-    width: 100%;
-    font-weight: 600;
-    margin: 0 !important;
-    text-align: left;
-}
-
-.blog-faq-box p {
-    font-size: medium !important;
-    width: 100%;
-    text-align: left;
-    margin: 0 !important;
+/* LINKS */
+p a {
+    color: #ff5a2c;
 }
