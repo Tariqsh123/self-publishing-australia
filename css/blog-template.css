@@ -262,7 +262,8 @@ body {
 .about-row {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: 20px 0;
 }
 
@@ -291,13 +292,15 @@ body {
     margin-top: 20px;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    justify-items: center; /* horizontal center */
+    align-items: center;   /* vertical center */
 }
 
 .blog-clients-grid img {
-    width: auto;
     height: 25px;
+    width: auto;
 }
-
 /* NEIL */
 .blog-neil-box {
     display: flex;
