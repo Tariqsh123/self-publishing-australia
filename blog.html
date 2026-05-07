@@ -267,9 +267,9 @@ window.addEventListener('scroll', () => {
 
 
       
+    <h1 class="blog-main-heaidng">Thought Self Publishing Blogs <br> & Insights for Australian Authors</h1>
 <section class="blogs-container-hero-main-container">
 <div class="blogs-container-hero-texts">
-    <h1>Thought Self Publishing Blogs <br> & Insights for Australian Authors</h1>
 
     <p>
         Practical insights, expert guidance, and real strategies to help authors successfully navigate and thrive in Australia’s Book Publishing landscape.
@@ -813,10 +813,11 @@ categories.forEach(item => {
     width: 100%;
     max-width: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 60px 15px;
-    margin: 100px auto 0;
+    padding: 0 10px 60px;
+    gap: 10px;
+    margin: 0 auto;
 }
 .blogs-container-hero-texts{
   max-width: 750px;
@@ -824,9 +825,10 @@ categories.forEach(item => {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+
 }
 .jump-btn-container{
-  height: 1800px;
+  height: 1700px;
   width: fit-content;
   display: flex;
   justify-content: flex-end; /* right side */
@@ -840,7 +842,7 @@ categories.forEach(item => {
   padding: 10px 20px;
   color: #010d38;
   position: sticky;
-  top: 120px;
+  top: 600px;
   font-size: small;
   font-weight: 600;
   border-radius: 10px;
@@ -907,12 +909,13 @@ categories.forEach(item => {
 }
 }
 /* HEADING */
-.blogs-container-hero-main-container h1{
-    text-align: left;
+.blog-main-heaidng {
+    text-align: center;
     font-size: 45px !important;
     position: relative;
-    
+    margin: 150px 0 0;
     text-decoration: underline 2px #fa9a0a;
+    width: 100%;
 }
 .blogs-container-hero-main-container p{
     max-width: 750px;
@@ -958,8 +961,8 @@ categories.forEach(item => {
 
 /* MOBILE */
 @media (max-width: 600px){
-    .blogs-container-hero-main-container h1{
-        font-size: 28px;
+    .blog-main-heaidng{
+        font-size: 40px !important;
     }
 
     .blog-categories{
