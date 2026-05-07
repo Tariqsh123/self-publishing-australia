@@ -268,7 +268,7 @@ window.addEventListener('scroll', () => {
 
       
 <section class="blogs-container-hero-main-container">
-
+<div class="blogs-container-hero-texts">
     <h1>Thought Self Publishing Blogs <br> & Insights for Australian Authors</h1>
 
     <p>
@@ -368,10 +368,14 @@ window.addEventListener('scroll', () => {
         New articles are constantly published. Browse by category, bookmark what matters, 
         and return whenever you need a simple answer to your next publishing question.
     </p>
+    </div>
+    <div class="jump-btn-container">
+    <a href="#blog-main-card-container" class="jump-btn">Jump to Read Blogs ↓</a>
+    </div>
 
 </section>
 
-<section class="blog-main-card-container">
+<section class="blog-main-card-container" id="blog-main-card-container">
 
   <!-- 1 -->
   <a href="blogs/self-publishing-in-australia-complete-guide-2026.html" class="blog-card">
@@ -799,16 +803,109 @@ categories.forEach(item => {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 </style>
       <style>
+        *{
+          scroll-behavior: smooth;
+        }
         body{
           background-color: #fa9a0a13;
         }
         .blogs-container-hero-main-container{
     width: 100%;
-    max-width: 750px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 60px 15px;
     margin: 100px auto 0;
 }
+.blogs-container-hero-texts{
+  max-width: 750px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.jump-btn-container{
+  height: 1800px;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end; /* right side */
+  align-items: flex-start;
+  position: relative;
+}
 
+.jump-btn{
+  width: fit-content;
+  background: linear-gradient(135deg, #ffb703, #fa9a0a);
+  padding: 10px 20px;
+  color: #010d38;
+  position: sticky;
+  top: 120px;
+  font-size: small;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Smooth realistic motion */
+  animation: softPop 2s ease-in-out infinite;
+  transition: transform 0.25s ease;
+}
+
+/* Soft realistic pop */
+@keyframes softPop{
+  0%,100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.02);
+  }
+}
+
+/* Realistic light sweep */
+.jump-btn::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: realisticShine 2.5s ease-in-out infinite;
+}
+
+@keyframes realisticShine{
+  0%{
+    left: -120%;
+  }
+  20%{
+    left: 140%;
+  }
+  100%{
+    left: 140%;
+  }
+}
+
+/* Hover */
+.jump-btn:hover{
+  transform: scale(1.03);
+}
+/* MOBILE */
+@media (max-width:991px){
+  .jump-btn-container{
+    display: none;
+  }
+  .blogs-container-hero-main-container{
+    justify-content: center;
+}
+}
 /* HEADING */
 .blogs-container-hero-main-container h1{
     text-align: left;
@@ -857,6 +954,7 @@ categories.forEach(item => {
   background: linear-gradient(135deg, #ffb703, #fa9a0a);
     color: #000;
 }
+
 
 /* MOBILE */
 @media (max-width: 600px){
