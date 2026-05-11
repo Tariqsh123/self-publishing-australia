@@ -1679,6 +1679,7 @@ section.who-we-are .bracket h3 {
 }
 section.who-we-are p {
   padding-left: 0px;
+  font-size: 20px !important;
 }
 section.who-we-are .btn-live {
   background: transparent;
@@ -5308,6 +5309,11 @@ section.faq-form {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
 
@@ -5321,7 +5327,7 @@ section.faq-form {
 
   /* TEXT */
   .location-cta-text {
-    font-size: 16px;
+    font-size: 20px !important;
     line-height: 1.7;
     color: #ddd;
     margin-bottom: 30px;
