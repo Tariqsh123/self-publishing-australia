@@ -5284,3 +5284,76 @@ section.faq-form .form-details .submit button {
 section.faq-form {
     background: #f5b4001f;
 }
+
+
+
+
+
+
+ .location-cta-section {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* BOX */
+  .location-cta-box {
+    max-width: 1100px;
+    width: 100%;
+    background: #023047;
+    color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  /* TITLE */
+  .location-cta-title {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* TEXT */
+  .location-cta-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ddd;
+    margin-bottom: 30px;
+  }
+
+  /* BUTTON WRAPPER (ROW) */
+  .location-cta-btn-row {
+    display: flex;
+    gap: 15px;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+.location-cta-btn-row button{
+  font-size:medium;
+
+}
+ 
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .location-cta-box {
+      padding: 30px;
+    }
+
+    .location-cta-title {
+      font-size: 24px;
+    }
+
+    .location-cta-btn-row {
+      flex-direction: column;
+    }
+  }
