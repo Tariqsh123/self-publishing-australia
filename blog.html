@@ -910,10 +910,11 @@ categories.forEach(item => {
 }
 /* HEADING */
 .blog-main-heaidng {
-    text-align: center;
+    text-align: left;
+    max-width: 950px;
     font-size: 45px !important;
     position: relative;
-    margin: 150px 0 0;
+    margin: 150px auto 0;
     text-decoration: underline 2px #fa9a0a;
     width: 100%;
 }
@@ -960,6 +961,16 @@ categories.forEach(item => {
 
 
 /* MOBILE */
+@media (max-width: 991px){
+    .blog-main-heaidng{
+      max-width: 750px;
+    }
+}
+@media (max-width: 750px){
+    .blog-main-heaidng{
+      padding-left: 10px;
+    }
+}
 @media (max-width: 600px){
     .blog-main-heaidng{
         font-size: 40px !important;
