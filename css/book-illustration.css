@@ -1435,8 +1435,6 @@ h4,
 h5,
 h6 {
     display: block;
-    font-family: Zilla Slab;
-    font-weight: 700
 }
 
 .h1,
@@ -2032,11 +2030,13 @@ section.bp-sec-two .call-now a {
 section.bp-sec-three {
     align-items: center;
     display: flex;
-    height: 385px
+    height: fit-content
 }
 
 section.bp-sec-three img {
-    height: 385px;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
     position: absolute;
     top: 0;
     width: 50%
