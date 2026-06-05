@@ -1344,9 +1344,9 @@ section.main-banner .btn-order {
   padding: 6px 25px !important;
   margin-bottom: 10px;
 }
-section.main-banner .offset-lg-1{
+/* section.main-banner .offset-lg-1{
   margin-bottom: 150px;
-}
+} */
 @media(max-width:768px){
   section.main-banner .offset-lg-1{
   margin-bottom: 0px;
