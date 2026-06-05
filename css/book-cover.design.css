@@ -3512,3 +3512,15 @@ section.faq-form .form-details .submit button {
         column-count: 2;
     }
 }
+
+
+
+.book-illustration-left-heading{
+    max-width: 1300px !important;
+    text-align: left !important;
+}
+@media(max-width:600px){
+ .book-illustration-left-heading{
+    text-align: center !important;
+}   
+}
