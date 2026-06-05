@@ -685,21 +685,7 @@ window.addEventListener('scroll', () => {
     </section>
 
 
-    <section class="get-started">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-10 mx-auto text-center">
-                    <h2 class="h2">Ready to Publish Your Book in <span style="color: #fa9a0a;"> Sydney</span>? </h2>
-                    <p>If the manuscript is complete, the next step is simple. Authors ready to publish my book Sydney searches can submit their manuscript online, request a publishing quote, or book a free consultation with a Sydney-based publishing specialist.</p>
-                    <p>No literary agent is required, all publishing models are available, and support is provided from submission to distribution. Leading book publishers Sydney, trusted publishing companies Sydney, and experienced book publisher Sydney professionals are ready to guide the process.</p>
-                   
-                    <div class="m-t-40 text-center">
-                        <button class="btn-order open_popup" onclick="openPopup()">Publish My Book in Sydney</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
     <section class="faq-form">
@@ -838,6 +824,22 @@ window.addEventListener('scroll', () => {
 </section>
 
 
+<section class="get-started">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-10 mx-auto text-center">
+                    <h2 class="h2">Ready to Publish Your Book in <span style="color: #fa9a0a;"> Sydney</span>? </h2>
+                    <p>If the manuscript is complete, the next step is simple. Authors ready to publish my book Sydney searches can submit their manuscript online, request a publishing quote, or book a free consultation with a Sydney-based publishing specialist.</p>
+                    <p>No literary agent is required, all publishing models are available, and support is provided from submission to distribution. Leading book publishers Sydney, trusted publishing companies Sydney, and experienced book publisher Sydney professionals are ready to guide the process.</p>
+                   
+                    <div class="m-t-40 text-center">
+                        <button class="btn-order open_popup" onclick="openPopup()">Publish My Book in Sydney</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer id="new-footer">
         <div class="new-footer-container">
@@ -951,12 +953,11 @@ window.addEventListener('scroll', () => {
 
 
 
+<script>
+function openPopup() {
+    if (document.getElementById("popupOverlay")) return;
 
-    <script>
-        function openPopup() {
-            if (document.getElementById("popupOverlay")) return;
-
-            document.body.insertAdjacentHTML("beforeend", `
+    document.body.insertAdjacentHTML("beforeend", `
     <div id="popupOverlay" class="popup-overlay">
         <div class="popup-container">
 
@@ -996,7 +997,7 @@ window.addEventListener('scroll', () => {
                     </h2>
 
                     <p class="popup-text">
-                        Self-publish print and digital books, and reach millions of readers around the world on Amazon.
+                        Self-publish print and digital books, and Reach Millions of Readers around the world on Amazon.
                     </p>
 
                     <form class="popup-form">
@@ -1020,23 +1021,24 @@ window.addEventListener('scroll', () => {
         </div>
     </div>
     `);
-        }
+}
 
-        function closePopup() {
-            document.getElementById("popupOverlay") ? .remove();
-        }
+function closePopup() {
+    document.getElementById("popupOverlay")?.remove();
+}
 
-        /* SWITCH LOGIC */
-        function showCalendar() {
-            document.getElementById("formView").style.display = "none";
-            document.getElementById("calendarView").style.display = "block";
-        }
+/* SWITCH LOGIC */
+function showCalendar() {
+    document.getElementById("formView").style.display = "none";
+    document.getElementById("calendarView").style.display = "block";
+}
 
-        function showForm() {
-            document.getElementById("calendarView").style.display = "none";
-            document.getElementById("formView").style.display = "block";
-        }
-    </script>
+function showForm() {
+    document.getElementById("calendarView").style.display = "none";
+    document.getElementById("formView").style.display = "block";
+}
+
+</script>
 
     <script src="js/bootstrap.js" defer="" type="80970722f35708a33b4760d4-text/javascript"></script>
     <script src="js/rocket-loader.min.js" data-cf-settings="80970722f35708a33b4760d4-|49" defer=""></script>
