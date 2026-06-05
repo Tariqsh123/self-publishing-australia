@@ -2521,7 +2521,7 @@ section.how-order .text-num {
 /* ---------------- Logo ---------------- */
 
 #new-nav-logo img {
-    height: 80px;
+    height: 70px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -2909,7 +2909,7 @@ section.faq-form .accordion .accordion-item .accordion-body {
 /* ---------------- Logo ---------------- */
 
 #new-nav-logo img {
-    height: 80px;
+    height: 70px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -3523,4 +3523,17 @@ section.faq-form .form-details .submit button {
  .book-illustration-left-heading{
     text-align: center !important;
 }   
+}
+.faq-heading{
+    text-align: left !important;
+    margin: 0 !important;
+    font-size: 40px !important;
+}
+.faq-hr{
+    width: 100% !important;
+    height: .5px !important;
+    border: none !important;
+    background-color: transparent !important;
+    border-top: 1px solid black !important; 
+    display: block !important;
 }
