@@ -1445,7 +1445,8 @@ section.why-choose .row{
 section.why-choose .box {
   margin-top: 20px;
   height: 450px;
-  width: 300px;
+  width: 98%;
+  max-width: 450px;
   padding: 20px;
   border-radius: 20px;
 
@@ -1462,16 +1463,21 @@ section.why-choose .box {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   text-align: center;
+}
+@media(max-width:450px){
+  section.why-choose .box{
+    height: fit-content !important;
+    width: 95%;
+  }
 }
 section.why-choose .box img {
   display: block;
-  margin: 10px;
 
 }
 section.why-choose .box .h3 {
   margin: 0;
-  margin: 20px 0;
   color: black !important;
   font-size: 22px !important;
   height: 30px;
@@ -1692,7 +1698,7 @@ section.who-we-are .btn-live:hover {
 .get-started{
   background-color: #f7f9f6;
   background: #eceeeb;
-  margin-top: 20px;
+  margin-top: 0px;
   /* background: linear-gradient(to right,#f7f9f6,#eceeeb ); */
 }
 section.get-started p {
