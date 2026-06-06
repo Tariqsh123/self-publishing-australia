@@ -3537,3 +3537,11 @@ section.faq-form .form-details .submit button {
     border-top: 1px solid black !important; 
     display: block !important;
 }
+
+
+@media(min-width:1600px){
+.bp-sec-three .container .row .pr-3{
+    position: relative;
+    right: 100px;
+}
+}
