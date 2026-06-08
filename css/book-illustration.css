@@ -2933,7 +2933,7 @@ section.faq-form {
 
 .new-footer-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     /* 5 columns per row */
     gap: 50px;
     max-width: 1400px;
@@ -2950,13 +2950,13 @@ section.faq-form {
 
 /* Last 2 columns ko second row me center shift karna */
 
-.new-footer-col:nth-child(6) {
+/* .new-footer-col:nth-child(6) {
     grid-column: 2 / 3;
 }
 
 .new-footer-col:nth-child(7) {
     grid-column: 3 / 4;
-}
+} */
 
 
 /* LOGO */
