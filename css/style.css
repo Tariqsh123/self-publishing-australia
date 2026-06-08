@@ -3576,7 +3576,6 @@ section.about-reviews{
   justify-content: center;
   align-items: center;
   background-color: #fa9a0a3d;
-  border-radius: 20px;
   padding: 60px 20px;
   margin: 60px 0;
   margin-bottom: 0;
@@ -5110,19 +5109,19 @@ section.faq-form .accordion .accordion-item .accordion-body {
     clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 #location-sydney-bg{
-  background: url(https://media.istockphoto.com/id/1498418424/photo/sydneys-splendour.jpg?s=612x612&w=0&k=20&c=fEJhZM4J-p-Kq9nfN1FU13UxLdIHFkNeJJMJGYO303k=) center/cover;
+  background: url(../images/Sydney.webp) center/cover;
 }
 #location-melbourne-bg{
-  background: url(https://www.travelvictoria.com.au/images/regions/melbourne/city/melbourne-city-22.jpg) center/cover;
+  background: url(../images/Melbourn.webp) center/cover;
 }
-#location-brisbane-bg{
+/* #location-brisbane-bg{
   background: url(https://t4.ftcdn.net/jpg/02/80/94/49/360_F_280944908_jywmQrwXEGCgX1V1jO9osM2Vp5FeVc74.jpg) center/cover;
-}
+} */
 #location-perth-bg{
-  background: url(https://images.pexels.com/photos/30835052/pexels-photo-30835052.jpeg?cs=srgb&dl=pexels-gsn-travel-30835052.jpg&fm=jpg) center/cover;
+  background: url(../images/Perth.webp) center/cover;
 }
 #location-adelaide-bg{
-  background: url(https://upload.wikimedia.org/wikipedia/commons/4/4e/Adelaide_city_centre_view.jpg) center/cover;
+  background: url(../images/Adelaide.webp) center/cover;
 }
 
 /* RIGHT SIDE */
